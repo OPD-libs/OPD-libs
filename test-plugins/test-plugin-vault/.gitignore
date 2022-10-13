@@ -1,0 +1,6 @@
+# no files included
+*
+*/
+!.gitignore
+!.obsidian
+!.obsidian/plugins
