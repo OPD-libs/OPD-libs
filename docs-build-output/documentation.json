@@ -1,0 +1,289 @@
+{
+	"id": 0,
+	"name": "OPD-libs",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 5,
+			"name": "opd-metadata-lib",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 6,
+					"name": "OPDMetadataLib",
+					"kind": 4,
+					"kindString": "Namespace",
+					"flags": {},
+					"children": [
+						{
+							"id": 13,
+							"name": "frontMatterRexExpPattern",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isConst": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Regex Expression to match the markdown frontmatter block."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "OPD-metadata-lib/src/index.ts",
+									"line": 7,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "'^(---)\\\\n[\\\\s\\\\S]*?\\\\n---'"
+						},
+						{
+							"id": 7,
+							"name": "getMetaDataFromFileContent",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "OPD-metadata-lib/src/index.ts",
+									"line": 15,
+									"character": 20
+								}
+							],
+							"signatures": [
+								{
+									"id": 8,
+									"name": "getMetaDataFromFileContent",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Gets the metadata object from the file contents using regEx.\r\nIf possible use "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@link",
+												"text": "getMetadataFromFileCache",
+												"target": 10
+											},
+											{
+												"kind": "text",
+												"text": "."
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 9,
+											"name": "fileContent",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the file content to read the metadata from"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							]
+						},
+						{
+							"id": 10,
+							"name": "getMetadataFromFileCache",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "OPD-metadata-lib/src/index.ts",
+									"line": 44,
+									"character": 20
+								}
+							],
+							"signatures": [
+								{
+									"id": 11,
+									"name": "getMetadataFromFileCache",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Gets the medata object form obsidian file cache."
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 12,
+											"name": "file",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "TFile",
+												"qualifiedName": "TFile",
+												"package": "obsidian"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"children": [
+								13
+							]
+						},
+						{
+							"title": "Functions",
+							"children": [
+								7,
+								10
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "OPD-metadata-lib/src/index.ts",
+							"line": 3,
+							"character": 17
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Namespaces",
+					"children": [
+						6
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "OPD-metadata-lib/src/index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "opd-settings-lib",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 2,
+					"name": "Greeter",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "OPD-settings-lib/src/index.ts",
+							"line": 4,
+							"character": 13
+						}
+					],
+					"signatures": [
+						{
+							"id": 3,
+							"name": "Greeter",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 4,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "aaaaa"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"children": [
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "OPD-settings-lib/src/index.ts",
+					"line": 4,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Modules",
+			"children": [
+				5,
+				1
+			]
+		}
+	]
+}
