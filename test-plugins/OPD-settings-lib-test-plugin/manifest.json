@@ -1,0 +1,10 @@
+{
+	"id": "opd-settings-lib-test-plugin",
+	"name": "OPD Settings Lib Test Plugin",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "OPD Settings Lib Test Plugin",
+	"author": "Obsidian",
+	"authorUrl": "https://obsidian.md",
+	"isDesktopOnly": false
+}
