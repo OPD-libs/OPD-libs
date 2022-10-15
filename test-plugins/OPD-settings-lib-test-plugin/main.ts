@@ -1,5 +1,5 @@
-import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
-import {Greeter, OPDSettingsLib} from 'opd-settings-lib/lib';
+import { App, Plugin, PluginSettingTab, Setting } from 'obsidian';
+import {} from 'opd-settings-lib/lib';
 
 // Remember to rename these classes and interfaces!
 
@@ -21,8 +21,6 @@ export default class MyPlugin extends Plugin {
 			id: 'test',
 			name: 'Test',
 			callback: () => {
-				console.log(Greeter('test'));
-				console.log(OPDSettingsLib.greet('test'));
 			}
 		});
 

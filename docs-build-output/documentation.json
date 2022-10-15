@@ -5,21 +5,21 @@
 	"flags": {},
 	"children": [
 		{
-			"id": 5,
+			"id": 69,
 			"name": "opd-metadata-lib",
 			"kind": 2,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 6,
+					"id": 70,
 					"name": "OPDMetadataLib",
 					"kind": 4,
 					"kindString": "Namespace",
 					"flags": {},
 					"children": [
 						{
-							"id": 13,
+							"id": 77,
 							"name": "frontMatterRexExpPattern",
 							"kind": 32,
 							"kindString": "Variable",
@@ -38,7 +38,8 @@
 								{
 									"fileName": "OPD-metadata-lib/src/index.ts",
 									"line": 7,
-									"character": 17
+									"character": 17,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-metadata-lib/src/index.ts#L7"
 								}
 							],
 							"type": {
@@ -48,7 +49,7 @@
 							"defaultValue": "'^(---)\\\\n[\\\\s\\\\S]*?\\\\n---'"
 						},
 						{
-							"id": 7,
+							"id": 71,
 							"name": "getMetaDataFromFileContent",
 							"kind": 64,
 							"kindString": "Function",
@@ -57,12 +58,13 @@
 								{
 									"fileName": "OPD-metadata-lib/src/index.ts",
 									"line": 15,
-									"character": 20
+									"character": 20,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-metadata-lib/src/index.ts#L15"
 								}
 							],
 							"signatures": [
 								{
-									"id": 8,
+									"id": 72,
 									"name": "getMetaDataFromFileContent",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -77,7 +79,7 @@
 												"kind": "inline-tag",
 												"tag": "@link",
 												"text": "getMetadataFromFileCache",
-												"target": 10
+												"target": 74
 											},
 											{
 												"kind": "text",
@@ -87,7 +89,7 @@
 									},
 									"parameters": [
 										{
-											"id": 9,
+											"id": 73,
 											"name": "fileContent",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -114,7 +116,7 @@
 							]
 						},
 						{
-							"id": 10,
+							"id": 74,
 							"name": "getMetadataFromFileCache",
 							"kind": 64,
 							"kindString": "Function",
@@ -123,12 +125,13 @@
 								{
 									"fileName": "OPD-metadata-lib/src/index.ts",
 									"line": 44,
-									"character": 20
+									"character": 20,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-metadata-lib/src/index.ts#L44"
 								}
 							],
 							"signatures": [
 								{
-									"id": 11,
+									"id": 75,
 									"name": "getMetadataFromFileCache",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -143,7 +146,7 @@
 									},
 									"parameters": [
 										{
-											"id": 12,
+											"id": 76,
 											"name": "file",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -168,14 +171,14 @@
 						{
 							"title": "Variables",
 							"children": [
-								13
+								77
 							]
 						},
 						{
 							"title": "Functions",
 							"children": [
-								7,
-								10
+								71,
+								74
 							]
 						}
 					],
@@ -183,7 +186,8 @@
 						{
 							"fileName": "OPD-metadata-lib/src/index.ts",
 							"line": 3,
-							"character": 17
+							"character": 17,
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-metadata-lib/src/index.ts#L3"
 						}
 					]
 				}
@@ -192,7 +196,7 @@
 				{
 					"title": "Namespaces",
 					"children": [
-						6
+						70
 					]
 				}
 			],
@@ -200,7 +204,8 @@
 				{
 					"fileName": "OPD-metadata-lib/src/index.ts",
 					"line": 1,
-					"character": 0
+					"character": 0,
+					"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-metadata-lib/src/index.ts#L1"
 				}
 			]
 		},
@@ -213,56 +218,1160 @@
 			"children": [
 				{
 					"id": 2,
-					"name": "Greeter",
-					"kind": 64,
-					"kindString": "Function",
+					"name": "OPDSettingsLib",
+					"kind": 4,
+					"kindString": "Namespace",
 					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "untested"
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 45,
+							"name": "Version",
+							"kind": 4,
+							"kindString": "Namespace",
+							"flags": {},
+							"children": [
+								{
+									"id": 54,
+									"name": "Version",
+									"kind": 128,
+									"kindString": "Class",
+									"flags": {},
+									"children": [
+										{
+											"id": 55,
+											"name": "constructor",
+											"kind": 512,
+											"kindString": "Constructor",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "OPD-settings-lib/src/index.ts",
+													"line": 32,
+													"character": 12,
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L32"
+												}
+											],
+											"signatures": [
+												{
+													"id": 56,
+													"name": "new Version",
+													"kind": 16384,
+													"kindString": "Constructor signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 57,
+															"name": "major",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 58,
+															"name": "minor",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 59,
+															"name": "patch",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "reference",
+														"id": 54,
+														"name": "Version"
+													}
+												}
+											]
+										},
+										{
+											"id": 60,
+											"name": "major",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "OPD-settings-lib/src/index.ts",
+													"line": 28,
+													"character": 12,
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L28"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 61,
+											"name": "minor",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "OPD-settings-lib/src/index.ts",
+													"line": 29,
+													"character": 12,
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L29"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 62,
+											"name": "patch",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "OPD-settings-lib/src/index.ts",
+													"line": 30,
+													"character": 12,
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L30"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 63,
+											"name": "isBiggerThan",
+											"kind": 2048,
+											"kindString": "Method",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "OPD-settings-lib/src/index.ts",
+													"line": 38,
+													"character": 12,
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L38"
+												}
+											],
+											"signatures": [
+												{
+													"id": 64,
+													"name": "isBiggerThan",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 65,
+															"name": "other",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"id": 54,
+																"name": "Version"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											]
+										},
+										{
+											"id": 66,
+											"name": "isEqual",
+											"kind": 2048,
+											"kindString": "Method",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "OPD-settings-lib/src/index.ts",
+													"line": 60,
+													"character": 12,
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L60"
+												}
+											],
+											"signatures": [
+												{
+													"id": 67,
+													"name": "isEqual",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 68,
+															"name": "other",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"id": 54,
+																"name": "Version"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												}
+											]
+										}
+									],
+									"groups": [
+										{
+											"title": "Constructors",
+											"children": [
+												55
+											]
+										},
+										{
+											"title": "Properties",
+											"children": [
+												60,
+												61,
+												62
+											]
+										},
+										{
+											"title": "Methods",
+											"children": [
+												63,
+												66
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "OPD-settings-lib/src/index.ts",
+											"line": 27,
+											"character": 21,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L27"
+										}
+									]
+								},
+								{
+									"id": 46,
+									"name": "fromNumber",
+									"kind": 64,
+									"kindString": "Function",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "OPD-settings-lib/src/index.ts",
+											"line": 65,
+											"character": 24,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L65"
+										}
+									],
+									"signatures": [
+										{
+											"id": 47,
+											"name": "fromNumber",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 48,
+													"name": "major",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												},
+												{
+													"id": 49,
+													"name": "minor",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												},
+												{
+													"id": 50,
+													"name": "patch",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"id": 54,
+												"name": "Version"
+											}
+										}
+									]
+								},
+								{
+									"id": 51,
+									"name": "fromString",
+									"kind": 64,
+									"kindString": "Function",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "OPD-settings-lib/src/index.ts",
+											"line": 69,
+											"character": 24,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L69"
+										}
+									],
+									"signatures": [
+										{
+											"id": 52,
+											"name": "fromString",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 53,
+													"name": "version",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"id": 54,
+												"name": "Version"
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Classes",
+									"children": [
+										54
+									]
+								},
+								{
+									"title": "Functions",
+									"children": [
+										46,
+										51
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "OPD-settings-lib/src/index.ts",
+									"line": 26,
+									"character": 21,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L26"
+								}
+							]
+						},
+						{
+							"id": 34,
+							"name": "MigrationStep",
+							"kind": 128,
+							"kindString": "Class",
+							"flags": {},
+							"children": [
+								{
+									"id": 35,
+									"name": "constructor",
+									"kind": 512,
+									"kindString": "Constructor",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "OPD-settings-lib/src/index.ts",
+											"line": 19,
+											"character": 8,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L19"
+										}
+									],
+									"signatures": [
+										{
+											"id": 36,
+											"name": "new MigrationStep",
+											"kind": 16384,
+											"kindString": "Constructor signature",
+											"flags": {},
+											"typeParameter": [
+												{
+													"id": 37,
+													"name": "T",
+													"kind": 131072,
+													"kindString": "Type parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "object"
+													}
+												}
+											],
+											"parameters": [
+												{
+													"id": 38,
+													"name": "version",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"id": 54,
+														"name": "Version"
+													}
+												},
+												{
+													"id": 39,
+													"name": "defaultSettings",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"id": 37,
+														"name": "T"
+													}
+												},
+												{
+													"id": 40,
+													"name": "migrationFunction",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isOptional": true
+													},
+													"type": {
+														"type": "reference",
+														"id": 23,
+														"typeArguments": [
+															{
+																"type": "reference",
+																"id": 37,
+																"name": "T"
+															}
+														],
+														"name": "CustomMigrationFunction"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"id": 34,
+												"typeArguments": [
+													{
+														"type": "reference",
+														"id": 37,
+														"name": "T"
+													}
+												],
+												"name": "MigrationStep"
+											}
+										}
+									]
+								},
+								{
+									"id": 42,
+									"name": "defaultSettings",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "OPD-settings-lib/src/index.ts",
+											"line": 16,
+											"character": 8,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L16"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 37,
+										"name": "T"
+									}
+								},
+								{
+									"id": 43,
+									"name": "migrationFunction",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isOptional": true
+									},
+									"sources": [
+										{
+											"fileName": "OPD-settings-lib/src/index.ts",
+											"line": 17,
+											"character": 8,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L17"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 23,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 37,
+												"name": "T"
+											}
+										],
+										"name": "CustomMigrationFunction"
+									}
+								},
+								{
+									"id": 41,
+									"name": "version",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "OPD-settings-lib/src/index.ts",
+											"line": 15,
+											"character": 8,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L15"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 54,
+										"name": "Version"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Constructors",
+									"children": [
+										35
+									]
+								},
+								{
+									"title": "Properties",
+									"children": [
+										42,
+										43,
+										41
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "OPD-settings-lib/src/index.ts",
+									"line": 14,
+									"character": 17,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L14"
+								}
+							],
+							"typeParameters": [
+								{
+									"id": 44,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							]
+						},
+						{
+							"id": 30,
+							"name": "Settings",
+							"kind": 256,
+							"kindString": "Interface",
+							"flags": {},
+							"children": [
+								{
+									"id": 32,
+									"name": "data",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "OPD-settings-lib/src/index.ts",
+											"line": 11,
+											"character": 8,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L11"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 33,
+										"name": "T"
+									}
+								},
+								{
+									"id": 31,
+									"name": "version",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "OPD-settings-lib/src/index.ts",
+											"line": 10,
+											"character": 8,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L10"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 54,
+										"name": "Version"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										32,
+										31
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "OPD-settings-lib/src/index.ts",
+									"line": 9,
+									"character": 21,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L9"
+								}
+							],
+							"typeParameters": [
+								{
+									"id": 33,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							]
+						},
+						{
+							"id": 23,
+							"name": "CustomMigrationFunction",
+							"kind": 4194304,
+							"kindString": "Type alias",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "OPD-settings-lib/src/index.ts",
+									"line": 6,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L6"
+								}
+							],
+							"typeParameters": [
+								{
+									"id": 28,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 24,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "OPD-settings-lib/src/index.ts",
+											"line": 6,
+											"character": 45,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L6"
+										}
+									],
+									"signatures": [
+										{
+											"id": 25,
+											"name": "__type",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 26,
+													"name": "oldSettingsData",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												},
+												{
+													"id": 27,
+													"name": "newDefaultSettingsData",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"id": 28,
+														"name": "T"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"id": 28,
+												"name": "T"
+											}
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 29,
+							"name": "MigrationTable",
+							"kind": 4194304,
+							"kindString": "Type alias",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "OPD-settings-lib/src/index.ts",
+									"line": 7,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L7"
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 34,
+									"typeArguments": [
+										{
+											"type": "intrinsic",
+											"name": "any"
+										}
+									],
+									"name": "MigrationStep"
+								}
+							}
+						},
+						{
+							"id": 13,
+							"name": "applyCustomMigration",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "OPD-settings-lib/src/index.ts",
+									"line": 119,
+									"character": 20,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L119"
+								}
+							],
+							"signatures": [
+								{
+									"id": 14,
+									"name": "applyCustomMigration",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 15,
+											"name": "T",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "object"
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 16,
+											"name": "oldSettingsData",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 17,
+											"name": "newDefaultSettingsData",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 15,
+												"name": "T"
+											}
+										},
+										{
+											"id": 18,
+											"name": "customMigration",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 23,
+												"typeArguments": [
+													{
+														"type": "reference",
+														"id": 15,
+														"name": "T"
+													}
+												],
+												"name": "CustomMigrationFunction"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 15,
+										"name": "T"
+									}
+								}
+							]
+						},
+						{
+							"id": 8,
+							"name": "applyDefaultMigration",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "OPD-settings-lib/src/index.ts",
+									"line": 109,
+									"character": 20,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L109"
+								}
+							],
+							"signatures": [
+								{
+									"id": 9,
+									"name": "applyDefaultMigration",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 10,
+											"name": "T",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "object"
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 11,
+											"name": "oldSettingsData",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 12,
+											"name": "newDefaultSettingsData",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 10,
+												"name": "T"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 10,
+										"name": "T"
+									}
+								}
+							]
+						},
+						{
+							"id": 3,
+							"name": "applyMigrationStep",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "OPD-settings-lib/src/index.ts",
+									"line": 97,
+									"character": 20,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L97"
+								}
+							],
+							"signatures": [
+								{
+									"id": 4,
+									"name": "applyMigrationStep",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 5,
+											"name": "T",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "object"
+											}
+										}
+									],
+									"parameters": [
+										{
+											"id": 6,
+											"name": "oldSettings",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 30,
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "object"
+													}
+												],
+												"name": "Settings"
+											}
+										},
+										{
+											"id": 7,
+											"name": "migrationStep",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 34,
+												"typeArguments": [
+													{
+														"type": "reference",
+														"id": 5,
+														"name": "T"
+													}
+												],
+												"name": "MigrationStep"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 30,
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 5,
+												"name": "T"
+											}
+										],
+										"name": "Settings"
+									}
+								}
+							]
+						},
+						{
+							"id": 19,
+							"name": "migrateSettings",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "OPD-settings-lib/src/index.ts",
+									"line": 123,
+									"character": 20,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L123"
+								}
+							],
+							"signatures": [
+								{
+									"id": 20,
+									"name": "migrateSettings",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 21,
+											"name": "settings",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 30,
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "object"
+													}
+												],
+												"name": "Settings"
+											}
+										},
+										{
+											"id": 22,
+											"name": "migrationTable",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 29,
+												"name": "MigrationTable"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 30,
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "object"
+											}
+										],
+										"name": "Settings"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Namespaces",
+							"children": [
+								45
+							]
+						},
+						{
+							"title": "Classes",
+							"children": [
+								34
+							]
+						},
+						{
+							"title": "Interfaces",
+							"children": [
+								30
+							]
+						},
+						{
+							"title": "Type Aliases",
+							"children": [
+								23,
+								29
+							]
+						},
+						{
+							"title": "Functions",
+							"children": [
+								13,
+								8,
+								3,
+								19
+							]
+						}
+					],
 					"sources": [
 						{
 							"fileName": "OPD-settings-lib/src/index.ts",
 							"line": 4,
-							"character": 13
-						}
-					],
-					"signatures": [
-						{
-							"id": 3,
-							"name": "Greeter",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"parameters": [
-								{
-									"id": 4,
-									"name": "name",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"comment": {
-										"summary": [
-											{
-												"kind": "text",
-												"text": "aaaaa"
-											}
-										]
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
+							"character": 17,
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L4"
 						}
 					]
 				}
 			],
 			"groups": [
 				{
-					"title": "Functions",
+					"title": "Namespaces",
 					"children": [
 						2
 					]
@@ -272,7 +1381,8 @@
 				{
 					"fileName": "OPD-settings-lib/src/index.ts",
 					"line": 4,
-					"character": 0
+					"character": 0,
+					"url": "https://github.com/OPD-libs/OPD-libs/blob/872abe7/libs/OPD-settings-lib/src/index.ts#L4"
 				}
 			]
 		}
@@ -281,7 +1391,7 @@
 		{
 			"title": "Modules",
 			"children": [
-				5,
+				69,
 				1
 			]
 		}
