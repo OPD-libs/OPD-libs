@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 base_path = Path(__file__).parent.parent.parent
-docs_rel_path = 'docs/typedoc'
+docs_rel_path = 'docs-generator/typedoc'
 metadata_lib_rel_path = 'libs/OPD-metadata-lib'
 settings_lib_rel_path = 'libs/OPD-settings-lib'
 lib_rel_paths = [metadata_lib_rel_path, settings_lib_rel_path]

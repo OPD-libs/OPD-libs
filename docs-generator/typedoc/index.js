@@ -12,7 +12,7 @@ async function main() {
 
     if (project) {
         // Project may not have converted correctly
-        const outputDir = "../../docs-build-output";
+        const outputDir = "../../docs";
 
         // Rendered docs
         await app.generateDocs(project, outputDir);
