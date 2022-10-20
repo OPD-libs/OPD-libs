@@ -1,4 +1,4 @@
-import {parseYaml, TFile} from 'obsidian';
+import {parseYaml, Plugin_2, TFile} from 'obsidian';
 
 export namespace OPDMetadataLib {
     /**
@@ -41,8 +41,8 @@ export namespace OPDMetadataLib {
 	 *
 	 * @param file
 	 */
-    export function getMetadataFromFileCache(file: TFile): object {
-		let metadata: any = app.metadataCache.getFileCache(file)?.frontmatter;
+    export function getMetadataFromFileCache(file: TFile, plugin: Plugin_2, fieldName: string): object {
+		let metadata: any = plugin.app.metadataCache.getFileCache(file)?.frontmatter;
 
 		if (metadata) {
 			metadata = Object.assign({}, metadata); // copy
