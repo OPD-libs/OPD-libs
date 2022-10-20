@@ -1,4 +1,4 @@
-import {parseYaml, stringifyYaml, TFile} from 'obsidian';
+import {parseYaml, Plugin_2, stringifyYaml, TFile} from 'obsidian';
 
 export namespace OPDMetadataLib {
     /**
@@ -71,10 +71,11 @@ export namespace OPDMetadataLib {
 	 *
 	 * @param file
 	 *
+	 * @param plugin
 	 * @returns the metadata as a property array
 	 */
-    export function getMetadataFromFileCache(file: TFile): Property[] {
-		let metadata: any = app.metadataCache.getFileCache(file)?.frontmatter;
+    export function getMetadataFromFileCache(file: TFile, plugin: Plugin_2): Property[] {
+		let metadata: any = plugin.app.metadataCache.getFileCache(file)?.frontmatter;
 
 		if (metadata) {
 			metadata = Object.assign({}, metadata); // copy
@@ -97,8 +98,9 @@ export namespace OPDMetadataLib {
 	 *
 	 * @param property
 	 * @param file the file to modify the frontmatter in
+	 * @param plugin
 	 */
-	export async function updateMetaDataProperty(property: Property|Property[], file: TFile) {
+	export async function updateMetaDataProperty(property: Property|Property[], file: TFile, plugin: Plugin_2) {
 		// make property always an array
 		if (!Array.isArray(property)) {
 			property = [property];
@@ -106,7 +108,7 @@ export namespace OPDMetadataLib {
 
 		for (const property1 of property) {
 			if (property1.type === PropertyType.YAML) {
-				await updateFrontmatterProperty(property1, file);
+				await updateFrontmatterProperty(property1, file, plugin);
 				return;
 			}
 		}
@@ -118,16 +120,17 @@ export namespace OPDMetadataLib {
 	 *
 	 * @param property
 	 * @param file the file to modify the frontmatter in
+	 * @param plugin
 	 */
-	export async function updateFrontmatterProperty(property: Property|Property[], file: TFile) {
-		let fileContent: string = await app.vault.read(file);
-		let frontmatter: Property[] = getMetadataFromFileCache(file);
+	export async function updateFrontmatterProperty(property: Property|Property[], file: TFile, plugin: Plugin_2) {
+		let fileContent: string = await plugin.app.vault.read(file);
+		let frontmatter: Property[] = getMetadataFromFileCache(file, plugin);
 
 		frontmatter = updatePropertyArray(property, frontmatter);
 		fileContent = removeFrontmatter(fileContent);
 		fileContent = `---\n${propertyArrayToYAML(frontmatter)}---${fileContent}`;
 
-		await app.vault.modify(file, fileContent);
+		await plugin.app.vault.modify(file, fileContent);
 	}
 
 	/**
