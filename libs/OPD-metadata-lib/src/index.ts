@@ -146,11 +146,11 @@ export namespace OPDMetadataLib {
 			property = [property];
 		}
 
-		for (const property1 of property) {
+		propLoop : for (const property1 of property) {
 			for (let i = 0; i < propertyArray.length; i++) {
 				if (propertyArray[i].key === property1.key) {
 					propertyArray[i] = property1;
-					break;
+					continue propLoop;
 				}
 			}
 			propertyArray.push(property1);
@@ -191,7 +191,4 @@ export namespace OPDMetadataLib {
 	export function propertyArrayToYAML(properties: Property[]): string {
 		return stringifyYaml(propertyArrayToObject(properties));
 	}
-
-
-
 }
