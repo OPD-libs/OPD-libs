@@ -27,37 +27,38 @@ beforeAll(() => {
     };
 });
 
-test('getting metadata from \"Kimi no Na Wa\"', async () => {
-    const sampleTFile = {
-        path: 'Media DB/Kimi no Na wa (2016).md',
-        name: 'Kimi no Na wa (2016).md',
-        basename: 'Kimi no Na wa (2016)',
-        extension: 'md',
-        stat: {
-            ctime: 1665233725400,
-            mtime: 1665236198538,
-            size: 475,
-        },
-    } as TFile;
-    const kimiNoNaWaMetadataMock: any = {
-        frontmatter: {
-            title: 'Kimi no Na wa.',
-        },
-    };
-    const expectedPropertyArray: OPDMetadataLib.Property[] = [
-        {
-            type: OPDMetadataLib.PropertyType.YAML,
-            key: 'title',
-            value: 'Kimi no Na wa.',
-        },
-    ];
+describe('test getMetadataFromFileCache',  () => {
+    test('should get metadata containing title from \"Kimi no Na Wa\" as property array', async () => {
+        const sampleTFile = {
+            path: 'Media DB/Kimi no Na wa (2016).md',
+            name: 'Kimi no Na wa (2016).md',
+            basename: 'Kimi no Na wa (2016)',
+            extension: 'md',
+            stat: {
+                ctime: 1665233725400,
+                mtime: 1665236198538,
+                size: 475,
+            },
+        } as TFile;
+        const kimiNoNaWaMetadataMock: any = {
+            frontmatter: {
+                title: 'Kimi no Na wa.',
+            },
+        };
+        const expectedPropertyArray: OPDMetadataLib.Property[] = [
+            {
+                type: OPDMetadataLib.PropertyType.YAML,
+                key: 'title',
+                value: 'Kimi no Na wa.',
+            },
+        ];
 
-    mockPlugin = {...mockAppGenerator(sampleTFile, mockFileContents, kimiNoNaWaMetadataMock)} as unknown as Plugin_2;
-    expect(OPDMetadataLib.getMetadataFromFileCache(sampleTFile, mockPlugin)).toEqual(expectedPropertyArray);
+        mockPlugin = {...mockAppGenerator(sampleTFile, mockFileContents, kimiNoNaWaMetadataMock)} as unknown as Plugin_2;
+        expect(OPDMetadataLib.getMetadataFromFileCache(sampleTFile, mockPlugin)).toEqual(expectedPropertyArray);
+    });
 });
 
-
-describe('property array conversions', () => {
+describe('test property array conversions', () => {
     const propertyArray: OPDMetadataLib.Property[] = [
         {
             type: OPDMetadataLib.PropertyType.YAML,
@@ -105,17 +106,17 @@ statistics:
   ranked: 24
   popularity: 11`;
 
-    test('propertyArrayToObject', () => {
+    test('convert to object - should convert the property array into an object', () => {
         expect(OPDMetadataLib.propertyArrayToObject(propertyArray)).toEqual(expectedObj);
     })
 
-    test('propertyArrayToYAML', () => {
+    test('convert to YAML - should convert the property array into YAML', () => {
         // sorry AB, here idk how to mock obsidian's stringifyYaml function
         // expect(OPDMetadataLib.propertyArrayToYAML(propertyArray)).toEqual(expectedYAML);
     })
 });
 
-describe('updatePropertyArray', () => {
+describe('test updatePropertyArray', () => {
     let propertyArray: OPDMetadataLib.Property[];
     beforeEach(() => {
        propertyArray = [
@@ -127,7 +128,7 @@ describe('updatePropertyArray', () => {
        ]
     });
 
-    test('update existing', () => {
+    test('update existent property - should update the existing property', () => {
         expect(OPDMetadataLib.updatePropertyArray({key: 'title', value: 'Your Name.', type: OPDMetadataLib.PropertyType.YAML}, propertyArray))
             .toEqual([
                 {
@@ -138,7 +139,7 @@ describe('updatePropertyArray', () => {
             ]);
     });
 
-    test('add new', () => {
+    test('update non existent property - should add a new property', () => {
         expect(OPDMetadataLib.updatePropertyArray({key: 'episodes', value: 1, type: OPDMetadataLib.PropertyType.YAML}, propertyArray))
             .toEqual([
                 {
@@ -154,7 +155,7 @@ describe('updatePropertyArray', () => {
             ]);
     });
 
-    test('do both', () => {
+    test('update multiple properties - should update one existing and one new property', () => {
         expect(OPDMetadataLib.updatePropertyArray([
             {key: 'episodes', value: 1, type: OPDMetadataLib.PropertyType.YAML},
             {key: 'title', value: 'Your Name.', type: OPDMetadataLib.PropertyType.YAML},
