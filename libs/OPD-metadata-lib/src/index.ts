@@ -192,17 +192,17 @@ export namespace OPDMetadataLib {
 		return stringifyYaml(propertyArrayToObject(properties));
 	}
 	
-	export function getFieldFromTFile(field: string, tfile: TFile, plugin: Plugin_2, isInline: boolean=true): any {
+	export function getFieldFromTFile(field: string, tfile: TFile, plugin: Plugin_2, isInline: boolean=false): any {
 	}
 	
-	export function updateFieldInTFile(field: string, value: any, tfile: TFile, plugin: Plugin_2, isInline: boolean=true) : any {
+	export function updateFieldInTFile(field: string, value: any, tfile: TFile, plugin: Plugin_2, isInline: boolean=false) : any {
 		
 	}
 	
-	export function createFieldInTFile(field: string, value: any, tfile: TFile, plugin: Plugin_2, isInline: boolean=true) : any {
+	export function createFieldInTFile(field: string, value: any, tfile: TFile, plugin: Plugin_2, isInline: boolean=false) : any {
 	}
 	
-	export function deleteFieldInTFile(field: string, value: any, tfile: TFile, plugin: Plugin_2, isInline: boolean=true) : any {
+	export function deleteFieldInTFile(field: string, value: any, tfile: TFile, plugin: Plugin_2, isInline: boolean=false) : any {
 
 	}
 }
