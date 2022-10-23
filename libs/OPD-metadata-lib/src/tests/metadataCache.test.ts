@@ -1,5 +1,6 @@
-import {App, Plugin_2, TFile} from 'obsidian';
-import {OPDMetadataLib} from '..';
+import { App, DataWriteOptions, Plugin_2, TFile  } from 'obsidian';
+import { OPDMetadataLib } from '..';
+import type { Vault } from 'obsidian';
 
 let mockFileContents: string;
 let mockPlugin: Plugin_2;
@@ -13,9 +14,12 @@ beforeAll(() => {
                     getAbstractFileByPath: (_path: string): TFile => {
                         return tfile;
                     },
-                    cachedRead: async (_tfile: TFile): Promise<string> => {
+                    cachedRead: async (_file: TFile): Promise<string> => {
                         return fileContents;
                     },
+                    modify: async (_file: TFile, _data: string, _options?: DataWriteOptions): Promise<void> => {
+                        jest.fn((_file, _data, _options) => Promise.resolve());
+                    }
                 },
                 metadataCache: {
                     getFileCache: (_tfile: TFile): any => {
@@ -27,7 +31,7 @@ beforeAll(() => {
     };
 });
 
-describe('test getMetadataFromFileCache',  () => {
+describe('test getMetadataFromFileCache', () => {
     test('should get metadata containing title from \"Kimi no Na Wa\" as property array', async () => {
         const sampleTFile = {
             path: 'Media DB/Kimi no Na wa (2016).md',
@@ -53,7 +57,7 @@ describe('test getMetadataFromFileCache',  () => {
             },
         ];
 
-        mockPlugin = {...mockAppGenerator(sampleTFile, mockFileContents, kimiNoNaWaMetadataMock)} as unknown as Plugin_2;
+        mockPlugin = { ...mockAppGenerator(sampleTFile, mockFileContents, kimiNoNaWaMetadataMock) } as unknown as Plugin_2;
         expect(OPDMetadataLib.getMetadataFromFileCache(sampleTFile, mockPlugin)).toEqual(expectedPropertyArray);
     });
 });
@@ -119,17 +123,17 @@ statistics:
 describe('test updatePropertyArray', () => {
     let propertyArray: OPDMetadataLib.Property[];
     beforeEach(() => {
-       propertyArray = [
-           {
-               type: OPDMetadataLib.PropertyType.YAML,
-               key: 'title',
-               value: 'Kimi no Na wa.',
-           },
-       ]
+        propertyArray = [
+            {
+                type: OPDMetadataLib.PropertyType.YAML,
+                key: 'title',
+                value: 'Kimi no Na wa.',
+            },
+        ]
     });
 
     test('update existent property - should update the existing property', () => {
-        expect(OPDMetadataLib.updatePropertyArray({key: 'title', value: 'Your Name.', type: OPDMetadataLib.PropertyType.YAML}, propertyArray))
+        expect(OPDMetadataLib.updatePropertyArray({ key: 'title', value: 'Your Name.', type: OPDMetadataLib.PropertyType.YAML }, propertyArray))
             .toEqual([
                 {
                     type: OPDMetadataLib.PropertyType.YAML,
@@ -140,7 +144,7 @@ describe('test updatePropertyArray', () => {
     });
 
     test('update non existent property - should add a new property', () => {
-        expect(OPDMetadataLib.updatePropertyArray({key: 'episodes', value: 1, type: OPDMetadataLib.PropertyType.YAML}, propertyArray))
+        expect(OPDMetadataLib.updatePropertyArray({ key: 'episodes', value: 1, type: OPDMetadataLib.PropertyType.YAML }, propertyArray))
             .toEqual([
                 {
                     type: OPDMetadataLib.PropertyType.YAML,
@@ -157,8 +161,8 @@ describe('test updatePropertyArray', () => {
 
     test('update multiple properties - should update one existing and one new property', () => {
         expect(OPDMetadataLib.updatePropertyArray([
-            {key: 'episodes', value: 1, type: OPDMetadataLib.PropertyType.YAML},
-            {key: 'title', value: 'Your Name.', type: OPDMetadataLib.PropertyType.YAML},
+            { key: 'episodes', value: 1, type: OPDMetadataLib.PropertyType.YAML },
+            { key: 'title', value: 'Your Name.', type: OPDMetadataLib.PropertyType.YAML },
         ], propertyArray))
             .toEqual([
                 {
@@ -174,4 +178,3 @@ describe('test updatePropertyArray', () => {
             ]);
     });
 });
-
