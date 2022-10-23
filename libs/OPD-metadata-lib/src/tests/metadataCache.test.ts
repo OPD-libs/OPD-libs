@@ -1,8 +1,9 @@
 import { App, DataWriteOptions, Plugin_2, TFile } from 'obsidian';
 import { OPDMetadataLib } from '..';
-import type { Vault } from 'obsidian';
 
-let mockFileContents: string;
+let mockFileContents: string = `---
+title: Kimi no Na wa.
+---`
 let mockPlugin: Plugin_2;
 let mockAppGenerator: (tfile: TFile, fileContents: string, fileMetadata: any) => App;
 const sampleTFile = {
@@ -16,7 +17,7 @@ const sampleTFile = {
         size: 475,
     },
 } as TFile;
-const kimiNoNaWaMetadataMock: any = {
+const mockMetadata: any = {
     frontmatter: {
         title: 'Kimi no Na wa.',
     },
@@ -33,9 +34,7 @@ beforeAll(() => {
                     cachedRead: async (_file: TFile): Promise<string> => {
                         return fileContents;
                     },
-                    modify: async (_file: TFile, _data: string, _options?: DataWriteOptions): Promise<void> => {
-                        jest.fn((_file, _data, _options) => Promise.resolve());
-                    }
+                    modify: jest.fn((_file: TFile, _data: string, _options: DataWriteOptions) => Promise.resolve())
                 },
                 metadataCache: {
                     getFileCache: (_tfile: TFile): any => {
@@ -57,7 +56,7 @@ describe('test getMetadataFromFileCache', () => {
             },
         ];
 
-        mockPlugin = { ...mockAppGenerator(sampleTFile, mockFileContents, kimiNoNaWaMetadataMock) } as unknown as Plugin_2;
+        mockPlugin = { ...mockAppGenerator(sampleTFile, mockFileContents, mockMetadata) } as unknown as Plugin_2;
         expect(OPDMetadataLib.getMetadataFromFileCache(sampleTFile, mockPlugin)).toEqual(expectedPropertyArray);
     });
 });
