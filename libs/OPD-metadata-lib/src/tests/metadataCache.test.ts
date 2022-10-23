@@ -177,3 +177,12 @@ describe('test updatePropertyArray', () => {
             ]);
     });
 });
+
+describe("create frontmatter fields", () => {
+    test("should successfully create when it doesn't exist", () => {
+        mockPlugin = { ...mockAppGenerator(sampleTFile, mockFileContents, mockMetadata) } as unknown as Plugin_2;
+        expect(OPDMetadataLib.createFieldInTFile("newlyCreated", "test", sampleTFile, mockPlugin)).resolves.toBeUndefined();
+        expect(mockPlugin.app.vault.modify).toHaveBeenCalled();
+        expect(mockPlugin.app.vault.modify).toHaveBeenCalledWith(sampleTFile, "---\ntitle: Kimi no Na wa.\nnewlyCreated: test\n---");
+    });
+});

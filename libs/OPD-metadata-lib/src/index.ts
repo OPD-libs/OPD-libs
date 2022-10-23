@@ -1,4 +1,4 @@
-import {parseYaml, Plugin_2, stringifyYaml, TFile} from 'obsidian';
+import { parseYaml, Plugin_2, stringifyYaml, TFile } from 'obsidian';
 
 export namespace OPDMetadataLib {
     /**
@@ -191,6 +191,10 @@ export namespace OPDMetadataLib {
 	export function propertyArrayToYAML(properties: Property[]): string {
 		return stringifyYaml(propertyArrayToObject(properties));
 	}
+
+	export function doesFieldExistInTFile(field: string, tfile: TFile, plugin: Plugin_2, isInline: boolean=false): boolean {
+		return false;
+	}
 	
 	export function getFieldFromTFile(field: string, tfile: TFile, plugin: Plugin_2, isInline: boolean=false): any {
 	}
@@ -199,7 +203,8 @@ export namespace OPDMetadataLib {
 		
 	}
 	
-	export function createFieldInTFile(field: string, value: any, tfile: TFile, plugin: Plugin_2, isInline: boolean=false) : any {
+	export async function createFieldInTFile(field: string, value: any, tfile: TFile, plugin: Plugin_2, isInline: boolean=false) : Promise<void> {
+		throw Error;
 	}
 	
 	export function deleteFieldInTFile(field: string, value: any, tfile: TFile, plugin: Plugin_2, isInline: boolean=false) : any {
