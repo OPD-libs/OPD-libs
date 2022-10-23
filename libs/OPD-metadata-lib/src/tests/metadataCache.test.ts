@@ -1,10 +1,26 @@
-import { App, DataWriteOptions, Plugin_2, TFile  } from 'obsidian';
+import { App, DataWriteOptions, Plugin_2, TFile } from 'obsidian';
 import { OPDMetadataLib } from '..';
 import type { Vault } from 'obsidian';
 
 let mockFileContents: string;
 let mockPlugin: Plugin_2;
 let mockAppGenerator: (tfile: TFile, fileContents: string, fileMetadata: any) => App;
+const sampleTFile = {
+    path: 'Media DB/Kimi no Na wa (2016).md',
+    name: 'Kimi no Na wa (2016).md',
+    basename: 'Kimi no Na wa (2016)',
+    extension: 'md',
+    stat: {
+        ctime: 1665233725400,
+        mtime: 1665236198538,
+        size: 475,
+    },
+} as TFile;
+const kimiNoNaWaMetadataMock: any = {
+    frontmatter: {
+        title: 'Kimi no Na wa.',
+    },
+};
 
 beforeAll(() => {
     mockAppGenerator = (tfile: TFile, fileContents: string, fileMetadata: any) => {
@@ -33,22 +49,6 @@ beforeAll(() => {
 
 describe('test getMetadataFromFileCache', () => {
     test('should get metadata containing title from \"Kimi no Na Wa\" as property array', async () => {
-        const sampleTFile = {
-            path: 'Media DB/Kimi no Na wa (2016).md',
-            name: 'Kimi no Na wa (2016).md',
-            basename: 'Kimi no Na wa (2016)',
-            extension: 'md',
-            stat: {
-                ctime: 1665233725400,
-                mtime: 1665236198538,
-                size: 475,
-            },
-        } as TFile;
-        const kimiNoNaWaMetadataMock: any = {
-            frontmatter: {
-                title: 'Kimi no Na wa.',
-            },
-        };
         const expectedPropertyArray: OPDMetadataLib.Property[] = [
             {
                 type: OPDMetadataLib.PropertyType.YAML,
