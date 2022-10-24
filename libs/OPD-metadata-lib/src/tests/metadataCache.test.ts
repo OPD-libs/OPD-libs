@@ -1,11 +1,16 @@
 import { App, DataWriteOptions, Plugin_2, TFile } from 'obsidian';
 import { OPDMetadataLib } from '..';
+import stringifyFrontmatter from '../utils';
 
+jest.mock('../utils');
 let mockFileContents: string = `---
 title: Kimi no Na wa.
 ---`
 let mockPlugin: Plugin_2;
 let mockAppGenerator: (tfile: TFile, fileContents: string, fileMetadata: any) => App;
+const modify = jest.fn(async (file: TFile, contents: string, options?: DataWriteOptions | null) => { });
+const mockedFunc = stringifyFrontmatter as jest.Mock;
+const { createFieldInTFile } = OPDMetadataLib;
 const sampleTFile = {
     path: 'Media DB/Kimi no Na wa (2016).md',
     name: 'Kimi no Na wa (2016).md',
@@ -31,10 +36,8 @@ beforeAll(() => {
                     getAbstractFileByPath: (_path: string): TFile => {
                         return tfile;
                     },
-                    cachedRead: async (_file: TFile): Promise<string> => {
-                        return fileContents;
-                    },
-                    modify: jest.fn((_file: TFile, _data: string, _options: DataWriteOptions) => Promise.resolve())
+                    cachedRead: jest.fn(async (_file: TFile): Promise<string> => await fileContents),
+                    modify: modify
                 },
                 metadataCache: {
                     getFileCache: (_tfile: TFile): any => {
@@ -44,6 +47,10 @@ beforeAll(() => {
             },
         } as unknown as App;
     };
+});
+
+afterEach(() => {
+    jest.resetAllMocks();
 });
 
 describe('test getMetadataFromFileCache', () => {
@@ -178,11 +185,12 @@ describe('test updatePropertyArray', () => {
     });
 });
 
-describe("create frontmatter fields", () => {
-    test("should successfully create when it doesn't exist", () => {
+describe("createFieldInTFile", () => {
+    test("should successfully create field when it doesn't exist", async () => {
+        mockedFunc.mockImplementation((_obj: any) => "---\ntitle: Kimi no Na wa.\nnewlyCreated: test\n---" );
         mockPlugin = { ...mockAppGenerator(sampleTFile, mockFileContents, mockMetadata) } as unknown as Plugin_2;
-        expect(OPDMetadataLib.createFieldInTFile("newlyCreated", "test", sampleTFile, mockPlugin)).resolves.toBeUndefined();
-        expect(mockPlugin.app.vault.modify).toHaveBeenCalled();
-        expect(mockPlugin.app.vault.modify).toHaveBeenCalledWith(sampleTFile, "---\ntitle: Kimi no Na wa.\nnewlyCreated: test\n---");
+        await createFieldInTFile("newlyCreated", "test", sampleTFile, mockPlugin);
+        expect(modify).toHaveBeenCalledWith(sampleTFile, "---\ntitle: Kimi no Na wa.\nnewlyCreated: test\n---");
+        expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
     });
 });
