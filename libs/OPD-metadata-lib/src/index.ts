@@ -1,10 +1,11 @@
-import { parseYaml, Plugin_2, stringifyYaml, TFile } from 'obsidian';
+import { FrontMatterCache, parseYaml, Plugin_2, stringifyYaml, TFile } from 'obsidian';
+import stringifyFrontmatter from './utils';
 
 export namespace OPDMetadataLib {
-    /**
-     * Regex Expression to match the markdown frontmatter block.
-     */
-    export const frontMatterRexExpPattern: string = '^(---)\\n[\\s\\S]*?\\n---';
+	/**
+	 * Regex Expression to match the markdown frontmatter block.
+	 */
+	export const frontMatterRexExpPattern: string = '^(---)\\n[\\s\\S]*?\\n---';
 
 	export interface Property {
 		key: string,
@@ -25,7 +26,7 @@ export namespace OPDMetadataLib {
 	 *
 	 * @returns the frontmatter as a property array
 	 */
-    export function getMetaDataFromFileContent(fileContent: string): Property[] {
+	export function getMetaDataFromFileContent(fileContent: string): Property[] {
 		const regExp = new RegExp(frontMatterRexExpPattern);
 		const frontMatterRegExpResult = regExp.exec(fileContent);
 		if (!frontMatterRegExpResult) {
@@ -60,7 +61,7 @@ export namespace OPDMetadataLib {
 
 		const properties: Property[] = [];
 		for (const [key, value] of Object.entries(obj)) {
-			properties.push({key, value, type: PropertyType.YAML});
+			properties.push({ key, value, type: PropertyType.YAML });
 		}
 
 		return properties;
@@ -74,7 +75,7 @@ export namespace OPDMetadataLib {
 	 * @param plugin
 	 * @returns the metadata as a property array
 	 */
-    export function getMetadataFromFileCache(file: TFile, plugin: Plugin_2): Property[] {
+	export function getMetadataFromFileCache(file: TFile, plugin: Plugin_2): Property[] {
 		let metadata: any = plugin.app.metadataCache.getFileCache(file)?.frontmatter;
 
 		if (metadata) {
@@ -86,7 +87,7 @@ export namespace OPDMetadataLib {
 
 		const properties: Property[] = [];
 		for (const [key, value] of Object.entries(metadata)) {
-			properties.push({key, value, type: PropertyType.YAML});
+			properties.push({ key, value, type: PropertyType.YAML });
 		}
 
 		return properties;
@@ -100,7 +101,7 @@ export namespace OPDMetadataLib {
 	 * @param file the file to modify the frontmatter in
 	 * @param plugin
 	 */
-	export async function updateMetaDataProperty(property: Property|Property[], file: TFile, plugin: Plugin_2) {
+	export async function updateMetaDataProperty(property: Property | Property[], file: TFile, plugin: Plugin_2) {
 		// make property always an array
 		if (!Array.isArray(property)) {
 			property = [property];
@@ -122,7 +123,7 @@ export namespace OPDMetadataLib {
 	 * @param file the file to modify the frontmatter in
 	 * @param plugin
 	 */
-	export async function updateFrontmatterProperty(property: Property|Property[], file: TFile, plugin: Plugin_2) {
+	export async function updateFrontmatterProperty(property: Property | Property[], file: TFile, plugin: Plugin_2) {
 		let fileContent: string = await plugin.app.vault.read(file);
 		let frontmatter: Property[] = getMetadataFromFileCache(file, plugin);
 
@@ -140,13 +141,13 @@ export namespace OPDMetadataLib {
 	 * @param property the properties with updated values
 	 * @param propertyArray
 	 */
-	export function updatePropertyArray(property: Property|Property[], propertyArray: Property[]): Property[] {
+	export function updatePropertyArray(property: Property | Property[], propertyArray: Property[]): Property[] {
 		// make property always an array
 		if (!Array.isArray(property)) {
 			property = [property];
 		}
 
-		propLoop : for (const property1 of property) {
+		propLoop: for (const property1 of property) {
 			for (let i = 0; i < propertyArray.length; i++) {
 				if (propertyArray[i].key === property1.key) {
 					propertyArray[i] = property1;
@@ -192,22 +193,40 @@ export namespace OPDMetadataLib {
 		return stringifyYaml(propertyArrayToObject(properties));
 	}
 
-	export function doesFieldExistInTFile(field: string, tfile: TFile, plugin: Plugin_2, isInline: boolean=false): boolean {
+	export function doesFieldExistInTFile(field: string, file: TFile, plugin: Plugin_2, isInline: boolean = false): boolean {
 		return false;
 	}
-	
-	export function getFieldFromTFile(field: string, tfile: TFile, plugin: Plugin_2, isInline: boolean=false): any {
+
+	export function getFieldFromTFile(field: string, file: TFile, plugin: Plugin_2, isInline: boolean = false): any {
 	}
-	
-	export function updateFieldInTFile(field: string, value: any, tfile: TFile, plugin: Plugin_2, isInline: boolean=false) : any {
-		
+
+	export function updateFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): any {
+
 	}
-	
-	export async function createFieldInTFile(field: string, value: any, tfile: TFile, plugin: Plugin_2, isInline: boolean=false) : Promise<void> {
-		throw Error;
+
+	async function generateFileContents(plugin: Plugin_2, file: TFile, frontmatterAsYaml: string) {
+		const fileContents = await plugin.app.vault.cachedRead(file);
+		return fileContents.replace(/^---\n(.*\n)*---/, frontmatterAsYaml)
 	}
-	
-	export function deleteFieldInTFile(field: string, value: any, tfile: TFile, plugin: Plugin_2, isInline: boolean=false) : any {
+
+	function updateParsedFrontmatter(plugin: Plugin_2, file: TFile, field: string, value: any) {
+		let frontmatter = plugin.app.metadataCache.getFileCache(file)?.frontmatter;
+		if (frontmatter) {
+			frontmatter[field] = value;
+		} else {
+			frontmatter = { field: value } as unknown as FrontMatterCache;
+		}
+		return frontmatter;
+	}
+
+	export async function createFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
+		let frontmatter = updateParsedFrontmatter(plugin, file, field, value);
+		const updatedYaml = stringifyFrontmatter(frontmatter);
+		let fileContents = await generateFileContents(plugin, file, updatedYaml);
+		await plugin.app.vault.modify(file, fileContents);
+	}
+
+	export function deleteFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): any {
 
 	}
 }
