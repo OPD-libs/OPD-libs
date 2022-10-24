@@ -1,5 +1,6 @@
 import { App, Plugin, PluginSettingTab, Setting } from 'obsidian';
 import {} from 'opd-settings-lib/lib';
+import * as M from 'opd-metadata-lib';
 
 // Remember to rename these classes and interfaces!
 
