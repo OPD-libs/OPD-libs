@@ -1,7 +1,6 @@
 import { App, DataWriteOptions, Plugin_2, TFile } from 'obsidian';
-import stringifyFrontmatter from '../utils';
 import { Internal } from '../Internal';
-import { createFieldInTFile } from '../API';
+import { addFieldInTFile } from '../API';
 
 jest.mock('../utils');
 let mockFileContents: string = `---
@@ -10,7 +9,6 @@ title: Kimi no Na wa.
 let mockPlugin: Plugin_2;
 let mockAppGenerator: (tfile: TFile, fileContents: string, fileMetadata: any) => App;
 const modify = jest.fn(async (file: TFile, contents: string, options?: DataWriteOptions | null) => {});
-const mockedFunc = stringifyFrontmatter as jest.Mock;
 const sampleTFile = {
 	path: 'Media DB/Kimi no Na wa (2016).md',
 	name: 'Kimi no Na wa (2016).md',
@@ -22,11 +20,6 @@ const sampleTFile = {
 		size: 475,
 	},
 } as TFile;
-const mockMetadata: any = {
-	frontmatter: {
-		title: 'Kimi no Na wa.',
-	},
-};
 
 beforeAll(() => {
 	mockAppGenerator = (tfile: TFile, fileContents: string, fileMetadata: any) => {
@@ -64,6 +57,11 @@ describe('test for internal methods', () => {
 				},
 			];
 
+			const mockMetadata: any = {
+				frontmatter: {
+					title: 'Kimi no Na wa.',
+				},
+			};
 			mockPlugin = { ...mockAppGenerator(sampleTFile, mockFileContents, mockMetadata) } as unknown as Plugin_2;
 			expect(Internal.getMetadataFromFileCache(sampleTFile, mockPlugin)).toEqual(expectedPropertyArray);
 		});
@@ -145,12 +143,29 @@ describe('test for internal methods', () => {
 	});
 });
 
-describe('createFieldInTFile', () => {
-	test("should successfully create field when it doesn't exist", async () => {
-		mockedFunc.mockImplementation((_obj: any) => '---\ntitle: Kimi no Na wa.\nnewlyCreated: test\n---');
-		mockPlugin = { ...mockAppGenerator(sampleTFile, mockFileContents, mockMetadata) } as unknown as Plugin_2;
-		await createFieldInTFile('newlyCreated', 'test', sampleTFile, mockPlugin);
-		expect(modify).toHaveBeenCalledWith(sampleTFile, '---\ntitle: Kimi no Na wa.\nnewlyCreated: test\n---');
-		expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
+describe('When there is no metadata', () => {
+	describe('addFieldInTFile', () => {
+		test('should create a field successfully', async () => {
+			mockPlugin = { ...mockAppGenerator(sampleTFile, '', {}) } as unknown as Plugin_2;
+			await addFieldInTFile('newlyCreated', 'test', sampleTFile, mockPlugin);
+			expect(modify).toHaveBeenCalledTimes(1);
+			expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
+		});
+	});
+});
+
+describe('When there is a single field of metadata', () => {
+	describe('addFieldInTFile', () => {
+		test('should create a field successfully', async () => {
+			const mockMetadata: any = {
+				frontmatter: {
+					title: 'Kimi no Na wa.',
+				},
+			};
+			mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
+			await addFieldInTFile('newlyCreated', 'test', sampleTFile, mockPlugin);
+			expect(modify).toHaveBeenCalledTimes(1);
+			expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
+		});
 	});
 });
