@@ -2,7 +2,7 @@ import { App, DataWriteOptions, Plugin_2, TFile } from 'obsidian';
 import { Internal } from '../Internal';
 import { addFieldInTFile } from '../API';
 
-jest.mock('../utils');
+jest.mock('../ObsUtils');
 let mockFileContents: string = `---
 title: Kimi no Na wa.
 ---`;
@@ -46,16 +46,113 @@ afterEach(() => {
 	jest.resetAllMocks();
 });
 
-describe('test for internal methods', () => {
+describe('tests for internal methods', () => {
+	let testObj = {};
+
+	beforeEach(() => {
+		testObj = {
+			a: 1,
+			b: {
+				c: 2,
+				d: [3, 4],
+			},
+		};
+	});
+
+	test('test hasField', () => {
+		expect(Internal.hasField('a', testObj)).toEqual(true);
+
+		expect(Internal.hasField('b.c', testObj)).toEqual(true);
+
+		expect(Internal.hasField('b.d[1]', testObj)).toEqual(true);
+
+		expect(Internal.hasField('e', testObj)).toEqual(false);
+
+		expect(Internal.hasField('b.d[2]', testObj)).toEqual(false);
+	});
+
+	test('test getField', () => {
+		expect(Internal.getField('b.c', testObj)).toEqual(2);
+
+		expect(Internal.getField('a', testObj)).toEqual(1);
+
+		expect(Internal.getField('b.d[1]', testObj)).toEqual(4);
+
+		expect(Internal.getField('e', testObj)).toEqual(undefined);
+
+		expect(Internal.getField('b.d[2]', testObj)).toEqual(undefined);
+	});
+
+	test('test deleteField', () => {
+		expect(Internal.deleteField('a', testObj)).toEqual({
+			b: {
+				c: 2,
+				d: [3, 4],
+			},
+		});
+
+		expect(Internal.deleteField('b.c', testObj)).toEqual({
+			b: {
+				d: [3, 4],
+			},
+		});
+
+		expect(Internal.deleteField('b.d[0]', testObj)).toEqual({
+			b: {
+				d: [4],
+			},
+		});
+	});
+
+	test('test updateField', () => {
+		expect(Internal.updateField('a', 2, testObj)).toEqual({
+			a: 2,
+			b: {
+				c: 2,
+				d: [3, 4],
+			},
+		});
+
+		expect(Internal.updateField('b.d[0]', 2, testObj)).toEqual({
+			a: 2,
+			b: {
+				c: 2,
+				d: [2, 4],
+			},
+		});
+
+		expect(() => Internal.updateField('b.e', 2, testObj)).toThrow();
+	});
+
+	test('test addField', () => {
+		expect(Internal.addField('e', 2, testObj)).toEqual({
+			a: 1,
+			b: {
+				c: 2,
+				d: [3, 4],
+			},
+			e: 2,
+		});
+
+		expect(Internal.addField('b.d[2]', 2, testObj)).toEqual({
+			a: 1,
+			b: {
+				c: 2,
+				d: [3, 4, 2],
+			},
+			e: 2,
+		});
+
+		expect(() => Internal.addField('b.c', 3, testObj)).toThrow();
+
+		expect(() => Internal.addField('b.e.c', 3, testObj)).toThrow();
+	});
+
 	describe('test getMetadataFromFileCache', () => {
 		test('should get metadata containing title from "Kimi no Na Wa" as property array', async () => {
-			const expectedPropertyArray: Internal.Property[] = [
-				{
-					type: Internal.PropertyType.YAML,
-					key: 'title',
-					value: 'Kimi no Na wa.',
-				},
-			];
+			const expectedObject = {
+				title: 'Kimi no Na wa.',
+			};
 
 			const mockMetadata: any = {
 				frontmatter: {
@@ -63,10 +160,11 @@ describe('test for internal methods', () => {
 				},
 			};
 			mockPlugin = { ...mockAppGenerator(sampleTFile, mockFileContents, mockMetadata) } as unknown as Plugin_2;
-			expect(Internal.getMetadataFromFileCache(sampleTFile, mockPlugin)).toEqual(expectedPropertyArray);
+			expect(Internal.getMetadataFromFileCache(sampleTFile, mockPlugin)).toEqual(expectedObject);
 		});
 	});
 
+	/*
 	describe('test property array conversions', () => {
 		const propertyArray: Internal.Property[] = [
 			{
@@ -141,6 +239,7 @@ describe('test for internal methods', () => {
 			expect(() => Internal.updatePropertyArray(propertyArray, { key: 'episodes', value: 1, type: Internal.PropertyType.YAML })).toThrow();
 		});
 	});
+	*/
 });
 
 describe('When there is no metadata', () => {

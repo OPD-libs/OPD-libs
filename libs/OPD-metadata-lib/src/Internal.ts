@@ -1,22 +1,12 @@
 import { parseYaml, Plugin_2, TFile } from 'obsidian';
-import stringifyFrontmatter from './utils';
+import { parsePath, traverseObject, traverseObjectByPath, traverseToParentByPath } from './Utils';
+import { stringifyFrontmatter } from './ObsUtils';
 
 export namespace Internal {
 	/**
 	 * Regex Expression to match the markdown frontmatter block.
 	 */
 	export const frontMatterRexExpPattern: string = '^(---)\\n[\\s\\S]*?\\n---';
-
-	export interface Property {
-		key: string;
-		value: any;
-		type: PropertyType;
-	}
-
-	export enum PropertyType {
-		YAML = 'yaml',
-		DATA_VIEW = 'data_view',
-	}
 
 	/**
 	 * Gets the metadata object from the file contents using regEx.
@@ -26,7 +16,7 @@ export namespace Internal {
 	 *
 	 * @returns the frontmatter as a property array
 	 */
-	export function getMetaDataFromFileContent(fileContent: string): Property[] {
+	export function getMetaDataFromFileContent(fileContent: string): object {
 		const regExp = new RegExp(frontMatterRexExpPattern);
 		const frontMatterRegExpResult = regExp.exec(fileContent);
 		if (!frontMatterRegExpResult) {
@@ -47,24 +37,19 @@ export namespace Internal {
 	 *
 	 * @param yaml
 	 *
-	 * @returns the parsed yaml as a property array
+	 * @returns the parsed yaml as an object
 	 */
-	export function getMetaDataFromYAML(yaml: string): Property[] {
+	export function getMetaDataFromYAML(yaml: string): object {
 		if (!yaml) {
-			return [];
+			return {};
 		}
 
 		const obj = parseYaml(yaml);
 		if (!obj) {
-			return [];
+			return {};
 		}
 
-		const properties: Property[] = [];
-		for (const [key, value] of Object.entries(obj)) {
-			properties.push({ key, value, type: PropertyType.YAML });
-		}
-
-		return properties;
+		return obj;
 	}
 
 	/**
@@ -73,68 +58,101 @@ export namespace Internal {
 	 * @param file
 	 *
 	 * @param plugin
-	 * @returns the metadata as a property array
+	 * @returns the metadata as an object
 	 */
-	export function getMetadataFromFileCache(file: TFile, plugin: Plugin_2): Property[] {
+	export function getMetadataFromFileCache(file: TFile, plugin: Plugin_2): object {
 		let metadata: any = plugin.app.metadataCache.getFileCache(file)?.frontmatter;
 
 		if (metadata) {
 			metadata = Object.assign({}, metadata); // copy
 			delete metadata.position;
 		} else {
-			return [];
+			return {};
 		}
 
-		const properties: Property[] = [];
-		for (const [key, value] of Object.entries(metadata)) {
-			properties.push({ key, value, type: PropertyType.YAML });
-		}
-
-		return properties;
+		return metadata;
 	}
 
 	/**
-	 * Replaces the Frontmatter of a file with the propertyArray.
+	 * Replaces the Frontmatter of a file with the metadata.
 	 *
-	 * @param propertyArray
+	 * @param metadata
 	 * @param file the file to modify the frontmatter in
 	 * @param plugin
 	 */
-	export async function updateFrontmatter(propertyArray: Property[], file: TFile, plugin: Plugin_2) {
+	export async function updateFrontmatter(metadata: object, file: TFile, plugin: Plugin_2) {
 		let fileContent: string = await plugin.app.vault.cachedRead(file);
 		fileContent = removeFrontmatter(fileContent);
-		fileContent = `${propertyArrayToFrontmatter(propertyArray)}${fileContent}`;
+		fileContent = `${stringifyFrontmatter(metadata)}${fileContent}`;
 
 		await plugin.app.vault.modify(file, fileContent);
 	}
 
-	export function hasProperty(propertyArray: Property[], key: string): boolean {
-		return !!findProperty(propertyArray, key);
+	export function hasField(path: string, metadata: object): boolean {
+		return getField(path, metadata) !== undefined;
 	}
 
-	export function findProperty(propertyArray: Property[], key: string): any {
-		return propertyArray.find(x => x.key == key);
+	export function getField(path: string, metadata: object): any {
+		// console.log(path, metadata);
+		return traverseObject(path, metadata);
 	}
 
-	export function deleteProperty(propertyArray: Property[], key: string): Property[] {
-		return propertyArray.filter(x => x.key !== key);
+	export function deleteField(path: string, metadata: object): object {
+		let { parent, child } = traverseToParentByPath(path, metadata);
+
+		if (Array.isArray(parent)) {
+			const index = Number.parseInt(child.key);
+			if (Number.isNaN(index)) {
+				return metadata;
+			}
+			parent.splice(index, 1);
+		} else {
+			delete parent[child.key];
+		}
+
+		return metadata;
 	}
 
 	/**
-	 * Updates one property in a property array.
+	 * Updates one field in an object.
 	 *
-	 * @param property the property with updated value
-	 * @param propertyArray
+	 * @param path
+	 * @param value
+	 * @param metadata the property with updated value
 	 */
-	export function updatePropertyArray(propertyArray: Property[], property: Property): Property[] {
-		for (let i = 0; i < propertyArray.length; i++) {
-			if (propertyArray[i].key === property.key) {
-				propertyArray[i] = property;
-				return propertyArray;
-			}
+	export function updateField(path: string, value: any, metadata: object): any {
+		let { parent, child } = traverseToParentByPath(path, metadata);
+
+		if (child.value === undefined) {
+			throw Error(`Field with key "${path}" does not exist in Object`);
 		}
 
-		throw Error(`Property with key "${property.key}" does not exist in Object`);
+		parent[child.key] = value;
+
+		return metadata;
+	}
+
+	/**
+	 * Adds one field in an object.
+	 *
+	 * @param path
+	 * @param value
+	 * @param metadata the property with updated value
+	 */
+	export function addField(path: string, value: any, metadata: object): any {
+		let { parent, child } = traverseToParentByPath(path, metadata);
+
+		if (parent === undefined) {
+			throw Error(`The parent to "${path}" does not exist in Object, please create the parent first`);
+		}
+
+		if (child.value !== undefined) {
+			throw Error(`Field with key "${path}" does already exist in Object`);
+		}
+
+		parent[child.key] = value;
+
+		return metadata;
 	}
 
 	/**
@@ -144,29 +162,5 @@ export namespace Internal {
 	 */
 	export function removeFrontmatter(fileContent: string): string {
 		return fileContent.replace(new RegExp(frontMatterRexExpPattern), '');
-	}
-
-	/**
-	 * Converts a property array to an object.
-	 *
-	 * @param properties
-	 */
-	export function propertyArrayToObject(properties: Property[]): object {
-		const obj: any = {};
-		for (const property of properties) {
-			if (property.type === PropertyType.YAML) {
-				obj[property.key] = property.value;
-			}
-		}
-		return obj;
-	}
-
-	/**
-	 * Converts a property array to yaml.
-	 *
-	 * @param properties
-	 */
-	export function propertyArrayToFrontmatter(properties: Property[]): string {
-		return stringifyFrontmatter(propertyArrayToObject(properties));
 	}
 }

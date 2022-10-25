@@ -1,6 +1,6 @@
 import { FrontMatterCache, Plugin_2, TFile } from 'obsidian';
 import { Internal } from './Internal';
-import stringifyFrontmatter from './utils';
+import { stringifyFrontmatter } from './ObsUtils';
 
 /**
  * Checks whether a field exists inside  a files' metadata.
@@ -11,43 +11,43 @@ import stringifyFrontmatter from './utils';
  * @param isInline unused for now
  */
 export function doesFieldExistInTFile(field: string, file: TFile, plugin: Plugin_2, isInline: boolean = false): boolean {
-	const propertyArray = Internal.getMetadataFromFileCache(file, plugin);
-	return Internal.hasProperty(propertyArray, field);
+	const metadata = Internal.getMetadataFromFileCache(file, plugin);
+	return Internal.hasField(field, metadata);
 }
 
 export function getFieldFromTFile(field: string, file: TFile, plugin: Plugin_2, isInline: boolean = false): any {
-	const propertyArray = Internal.getMetadataFromFileCache(file, plugin);
-	return Internal.findProperty(propertyArray, field);
+	const metadata = Internal.getMetadataFromFileCache(file, plugin);
+	return Internal.getField(field, metadata);
 }
 
 export async function addFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
-	const propertyArray = Internal.getMetadataFromFileCache(file, plugin);
-	propertyArray.push({ key: field, value: value, type: Internal.PropertyType.YAML });
-	await Internal.updateFrontmatter(propertyArray, file, plugin);
+	const metadata = Internal.getMetadataFromFileCache(file, plugin);
+	Internal.addField(field, value, metadata);
+	await Internal.updateFrontmatter(metadata, file, plugin);
 }
 
 export async function updateFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
-	const propertyArray = Internal.getMetadataFromFileCache(file, plugin);
-	const updatedPropertyArray = Internal.updatePropertyArray(propertyArray, { key: field, value: value, type: Internal.PropertyType.YAML });
-	await Internal.updateFrontmatter(updatedPropertyArray, file, plugin);
+	const metadata = Internal.getMetadataFromFileCache(file, plugin);
+	Internal.updateField(field, value, metadata);
+	await Internal.updateFrontmatter(metadata, file, plugin);
 }
 
 export async function upsertFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
-	let propertyArray = Internal.getMetadataFromFileCache(file, plugin);
+	let metadata = Internal.getMetadataFromFileCache(file, plugin);
 
-	if (Internal.hasProperty(propertyArray, field)) {
-		propertyArray = Internal.updatePropertyArray(propertyArray, { key: field, value: value, type: Internal.PropertyType.YAML });
+	if (Internal.hasField(field, metadata)) {
+		Internal.updateField(field, value, metadata);
 	} else {
-		propertyArray.push({ key: field, value: value, type: Internal.PropertyType.YAML });
+		Internal.addField(field, value, metadata);
 	}
 
-	await Internal.updateFrontmatter(propertyArray, file, plugin);
+	await Internal.updateFrontmatter(metadata, file, plugin);
 }
 
 export async function deleteFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
-	const propertyArray = Internal.getMetadataFromFileCache(file, plugin);
-	const updatedPropertyArray = Internal.deleteProperty(propertyArray, field);
-	await Internal.updateFrontmatter(updatedPropertyArray, file, plugin);
+	const metadata = Internal.getMetadataFromFileCache(file, plugin);
+	Internal.deleteField(field, metadata);
+	await Internal.updateFrontmatter(metadata, file, plugin);
 }
 
 async function generateFileContents(plugin: Plugin_2, file: TFile, frontmatterAsYaml: string) {
