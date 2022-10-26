@@ -126,6 +126,10 @@ export namespace Internal {
 	export function deleteField(path: string, metadata: object): object {
 		let { parent, child } = traverseObjectToParent(path, metadata);
 
+		if (parent.value === undefined) {
+			throw Error(`The parent of "${path}" does not exist in Object, can not delete child from non existing parent`);
+		}
+
 		if (Array.isArray(parent.value)) {
 			const index = Number.parseInt(child.key);
 			if (Number.isNaN(index)) {
@@ -149,8 +153,8 @@ export namespace Internal {
 	export function updateField(path: string, value: any, metadata: object): any {
 		let { parent, child } = traverseObjectToParent(path, metadata);
 
-		if (parent === undefined) {
-			throw Error(`The parent to "${path}" does not exist in Object, please create the parent first`);
+		if (parent.value === undefined) {
+			throw Error(`The parent of "${path}" does not exist in Object, please create the parent first`);
 		}
 
 		if (child.value === undefined) {
@@ -172,8 +176,8 @@ export namespace Internal {
 	export function insertField(path: string, value: any, metadata: object): any {
 		let { parent, child } = traverseObjectToParent(path, metadata);
 
-		if (parent === undefined) {
-			throw Error(`The parent to "${path}" does not exist in Object, please create the parent first`);
+		if (parent.value === undefined) {
+			throw Error(`The parent of "${path}" does not exist in Object, please create the parent first`);
 		}
 
 		if (child.value !== undefined) {
@@ -195,8 +199,8 @@ export namespace Internal {
 	export function updateOrInsertField(path: string, value: any, metadata: object): any {
 		let { parent, child } = traverseObjectToParent(path, metadata);
 
-		if (parent === undefined) {
-			throw Error(`The parent to "${path}" does not exist in Object, please create the parent first`);
+		if (parent.value === undefined) {
+			throw Error(`The parent of "${path}" does not exist in Object, please create the parent first`);
 		}
 
 		parent.value[child.key] = value;
