@@ -148,22 +148,6 @@ describe('tests for internal methods', () => {
 		expect(() => Internal.addField('b.e.c', 3, testObj)).toThrow();
 	});
 
-	describe('test getMetadataFromFileCache', () => {
-		test('should get metadata containing title from "Kimi no Na Wa" as property array', async () => {
-			const expectedObject = {
-				title: 'Kimi no Na wa.',
-			};
-
-			const mockMetadata: any = {
-				frontmatter: {
-					title: 'Kimi no Na wa.',
-				},
-			};
-			mockPlugin = { ...mockAppGenerator(sampleTFile, mockFileContents, mockMetadata) } as unknown as Plugin_2;
-			expect(Internal.getMetadataFromFileCache(sampleTFile, mockPlugin)).toEqual(expectedObject);
-		});
-	});
-
 	/*
 	describe('test property array conversions', () => {
 		const propertyArray: Internal.Property[] = [
