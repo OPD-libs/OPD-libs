@@ -126,12 +126,12 @@ export namespace Internal {
 	export function deleteField(path: string, metadata: object): object {
 		let { parent, child } = traverseObjectToParent(path, metadata);
 
-		if (Array.isArray(parent)) {
+		if (Array.isArray(parent.value)) {
 			const index = Number.parseInt(child.key);
 			if (Number.isNaN(index)) {
 				return metadata;
 			}
-			parent.splice(index, 1);
+			parent.value.splice(index, 1);
 		} else {
 			delete parent.value[child.key];
 		}
@@ -163,13 +163,13 @@ export namespace Internal {
 	}
 
 	/**
-	 * Adds one field in an object.
+	 * Inserts one field in an object.
 	 *
 	 * @param path
 	 * @param value
 	 * @param metadata
 	 */
-	export function addField(path: string, value: any, metadata: object): any {
+	export function insertField(path: string, value: any, metadata: object): any {
 		let { parent, child } = traverseObjectToParent(path, metadata);
 
 		if (parent === undefined) {
@@ -192,7 +192,7 @@ export namespace Internal {
 	 * @param value
 	 * @param metadata
 	 */
-	export function upsertField(path: string, value: any, metadata: object): any {
+	export function updateOrInsertField(path: string, value: any, metadata: object): any {
 		let { parent, child } = traverseObjectToParent(path, metadata);
 
 		if (parent === undefined) {

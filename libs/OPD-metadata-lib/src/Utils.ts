@@ -55,6 +55,7 @@ export function validatePath(path: string): void {
 
 	let insideStringBrackets: boolean = false;
 	let insideNumberBrackets: boolean = false;
+
 	for (let i = 0; i < path.length; i++) {
 		const char = path[i];
 		const nextChar = path[i + 1];
@@ -62,12 +63,15 @@ export function validatePath(path: string): void {
 		if (!allowedCharacters.includes(char)) {
 			throw new OPDTraversalError(`Invalid character "${char}" at position ${i} in "${path}", character ${char} is not a valid character`);
 		}
-		// if previous char was dot
+
+		// if char is a dot
 		if (char === '.') {
+			// a dot may not be at the beginning of a path
 			if (i === 0) {
 				throw new OPDTraversalError(`Invalid character "${char}" at position ${i} in "${path}", path may not start with a dot`);
 			}
 
+			// the thing following a dot must be a valid variable name, so it must start with a letter or an underscore
 			if (!(letters.includes(nextChar) || nextChar === '_')) {
 				throw new OPDTraversalError(`Invalid character "${nextChar}" at position ${i + 1} in "${path}", expected a letter or underscore to follow a dot`);
 			}
@@ -76,18 +80,20 @@ export function validatePath(path: string): void {
 		// bracket enter condition
 		if (char === '[') {
 			if (numbers.includes(nextChar)) {
+				// the bracket is used to access an array
 				insideNumberBrackets = true;
 				continue; // skip rest of current char
 			} else if (nextChar === '"') {
-				// make sure string inside of brackets does not start with a number or dot
+				// the bracket is used to access a property, property name must be wrapped in quotes
 				if (!(letters.includes(path[i + 2]) || path[i + 2] === '_')) {
+					// make sure string inside of brackets does not start with a number or dot
 					throw new OPDTraversalError(`Invalid character "${path[i + 2]}" at position ${i + 2} in "${path}", expected a letter or underscore to follow a "`);
 				}
 				insideStringBrackets = true;
 				i += 1; // skip next char
 				continue; // skip rest of current char
 			} else {
-				throw new OPDTraversalError(`Invalid character "${nextChar}" at position ${i + 1} in "${path}", expected number, " to follow a [`);
+				throw new OPDTraversalError(`Invalid character "${nextChar}" at position ${i + 1} in "${path}", expected number or " to follow a [`);
 			}
 		}
 

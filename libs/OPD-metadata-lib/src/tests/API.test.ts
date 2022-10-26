@@ -1,5 +1,5 @@
 import { App, DataWriteOptions, Plugin_2, TFile } from 'obsidian';
-import { addFieldInTFile } from '../API';
+import { insertFieldInTFile } from '../API';
 
 jest.mock('../ObsUtils');
 let mockPlugin: Plugin_2;
@@ -39,27 +39,28 @@ beforeAll(() => {
 });
 
 describe('When there is no metadata', () => {
-    describe('addFieldInTFile', () => {
-        test('should create a field successfully', async () => {
-            mockPlugin = { ...mockAppGenerator(sampleTFile, '', {}) } as unknown as Plugin_2;
-            await addFieldInTFile('newlyCreated', 'test', sampleTFile, mockPlugin);
-            expect(modify).toHaveBeenCalledTimes(1);
-            expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
-        });
-    });
+	describe('addFieldInTFile', () => {
+		test('should create a field successfully', async () => {
+			mockPlugin = { ...mockAppGenerator(sampleTFile, '', {}) } as unknown as Plugin_2;
+			await insertFieldInTFile('newlyCreated', 'test', sampleTFile, mockPlugin);
+			expect(modify).toHaveBeenCalledTimes(1);
+			expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
+		});
+	});
 });
 describe('When there is a single field of metadata', () => {
-    describe('addFieldInTFile', () => {
-        test('should create a field successfully', async () => {
-            const mockMetadata: any = {
-                frontmatter: {
-                    title: 'Kimi no Na wa.',
-                },
-            };
-            mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
-            await addFieldInTFile('newlyCreated', 'test', sampleTFile, mockPlugin);
-            expect(modify).toHaveBeenCalledTimes(1);
-            expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
-        });
-    });
+	describe('insertFieldInTFile', () => {
+		test('should create a field successfully', async () => {
+			const mockMetadata: any = {
+				frontmatter: {
+					title: 'Kimi no Na wa.',
+				},
+			};
+			mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
+			await insertFieldInTFile('newlyCreated', 'test', sampleTFile, mockPlugin);
+			// TODO: this fails, but idk how, maybe the call counter needs to bre reset?
+			expect(modify).toHaveBeenCalledTimes(1);
+			expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
+		});
+	});
 });

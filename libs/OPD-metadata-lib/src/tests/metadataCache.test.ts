@@ -78,8 +78,8 @@ describe('tests for internal methods', () => {
 		expect(() => Internal.updateField('b.e', 2, testObj)).toThrow();
 	});
 
-	test('test addField', () => {
-		expect(Internal.addField('e', 2, testObj)).toEqual({
+	test('test insertField', () => {
+		expect(Internal.insertField('e', 2, testObj)).toEqual({
 			a: 1,
 			b: {
 				c: 2,
@@ -88,7 +88,7 @@ describe('tests for internal methods', () => {
 			e: 2,
 		});
 
-		expect(Internal.addField('b.d[2]', 2, testObj)).toEqual({
+		expect(Internal.insertField('b.d[2]', 2, testObj)).toEqual({
 			a: 1,
 			b: {
 				c: 2,
@@ -97,9 +97,9 @@ describe('tests for internal methods', () => {
 			e: 2,
 		});
 
-		expect(() => Internal.addField('b.c', 3, testObj)).toThrow();
+		expect(() => Internal.insertField('b.c', 3, testObj)).toThrow();
 
-		expect(() => Internal.addField('b.e.c', 3, testObj)).toThrow();
+		expect(() => Internal.insertField('b.e.c', 3, testObj)).toThrow();
 	});
 
 	/*

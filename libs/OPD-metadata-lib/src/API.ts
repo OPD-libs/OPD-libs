@@ -20,9 +20,9 @@ export function getFieldFromTFile(field: string, file: TFile, plugin: Plugin_2, 
 	return Internal.getField(field, metadata);
 }
 
-export async function addFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
+export async function insertFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
 	const metadata = Internal.getMetadataFromFileCache(file, plugin);
-	Internal.addField(field, value, metadata);
+	Internal.insertField(field, value, metadata);
 	await Internal.updateFrontmatter(metadata, file, plugin);
 }
 
@@ -32,9 +32,9 @@ export async function updateFieldInTFile(field: string, value: any, file: TFile,
 	await Internal.updateFrontmatter(metadata, file, plugin);
 }
 
-export async function upsertFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
+export async function updateOrInsertFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
 	let metadata = Internal.getMetadataFromFileCache(file, plugin);
-	Internal.upsertField(field, value, metadata);
+	Internal.updateOrInsertField(field, value, metadata);
 	await Internal.updateFrontmatter(metadata, file, plugin);
 }
 

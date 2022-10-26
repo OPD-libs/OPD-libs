@@ -59,7 +59,7 @@ describe('test traverseObject', () => {
 
 	test('edge cases', () => {
 		expect(traverseObject('', testObject)).toEqual(testObject);
-		expect(traverseObject('a[b].b.c.e', testObject)).toEqual(undefined);
+		expect(traverseObject('a["b"].b.c.e', testObject)).toEqual(undefined);
 	});
 });
 
