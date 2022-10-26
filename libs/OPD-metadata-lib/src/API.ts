@@ -34,13 +34,7 @@ export async function updateFieldInTFile(field: string, value: any, file: TFile,
 
 export async function upsertFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
 	let metadata = Internal.getMetadataFromFileCache(file, plugin);
-
-	if (Internal.hasField(field, metadata)) {
-		Internal.updateField(field, value, metadata);
-	} else {
-		Internal.addField(field, value, metadata);
-	}
-
+	Internal.upsertField(field, value, metadata);
 	await Internal.updateFrontmatter(metadata, file, plugin);
 }
 

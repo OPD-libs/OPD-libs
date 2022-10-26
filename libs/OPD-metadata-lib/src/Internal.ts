@@ -1,5 +1,5 @@
 import { parseYaml, Plugin_2, TFile } from 'obsidian';
-import { parsePath, traverseObject, traverseObjectByPath, traverseToParentByPath } from './Utils';
+import { parsePath, traverseObject, traverseObjectByPath, traverseObjectToParent } from './Utils';
 import { stringifyFrontmatter } from './ObsUtils';
 
 export namespace Internal {
@@ -74,6 +74,15 @@ export namespace Internal {
 	}
 
 	/**
+	 * Removes the frontmatter block from a file.
+	 *
+	 * @param fileContent
+	 */
+	export function removeFrontmatter(fileContent: string): string {
+		return fileContent.replace(new RegExp(frontMatterRexExpPattern), '');
+	}
+
+	/**
 	 * Replaces the Frontmatter of a file with the metadata.
 	 *
 	 * @param metadata
@@ -88,17 +97,34 @@ export namespace Internal {
 		await plugin.app.vault.modify(file, fileContent);
 	}
 
+	/**
+	 * Returns true if the object has the field.
+	 *
+	 * @param path
+	 * @param metadata
+	 */
 	export function hasField(path: string, metadata: object): boolean {
 		return getField(path, metadata) !== undefined;
 	}
 
+	/**
+	 * Gets one field form an object.
+	 *
+	 * @param path
+	 * @param metadata
+	 */
 	export function getField(path: string, metadata: object): any {
-		// console.log(path, metadata);
 		return traverseObject(path, metadata);
 	}
 
+	/**
+	 * Deletes one field from am object.
+	 *
+	 * @param path
+	 * @param metadata
+	 */
 	export function deleteField(path: string, metadata: object): object {
-		let { parent, child } = traverseToParentByPath(path, metadata);
+		let { parent, child } = traverseObjectToParent(path, metadata);
 
 		if (Array.isArray(parent)) {
 			const index = Number.parseInt(child.key);
@@ -107,7 +133,7 @@ export namespace Internal {
 			}
 			parent.splice(index, 1);
 		} else {
-			delete parent[child.key];
+			delete parent.value[child.key];
 		}
 
 		return metadata;
@@ -118,16 +144,20 @@ export namespace Internal {
 	 *
 	 * @param path
 	 * @param value
-	 * @param metadata the property with updated value
+	 * @param metadata
 	 */
 	export function updateField(path: string, value: any, metadata: object): any {
-		let { parent, child } = traverseToParentByPath(path, metadata);
+		let { parent, child } = traverseObjectToParent(path, metadata);
+
+		if (parent === undefined) {
+			throw Error(`The parent to "${path}" does not exist in Object, please create the parent first`);
+		}
 
 		if (child.value === undefined) {
 			throw Error(`Field with key "${path}" does not exist in Object`);
 		}
 
-		parent[child.key] = value;
+		parent.value[child.key] = value;
 
 		return metadata;
 	}
@@ -137,10 +167,10 @@ export namespace Internal {
 	 *
 	 * @param path
 	 * @param value
-	 * @param metadata the property with updated value
+	 * @param metadata
 	 */
 	export function addField(path: string, value: any, metadata: object): any {
-		let { parent, child } = traverseToParentByPath(path, metadata);
+		let { parent, child } = traverseObjectToParent(path, metadata);
 
 		if (parent === undefined) {
 			throw Error(`The parent to "${path}" does not exist in Object, please create the parent first`);
@@ -150,17 +180,27 @@ export namespace Internal {
 			throw Error(`Field with key "${path}" does already exist in Object`);
 		}
 
-		parent[child.key] = value;
+		parent.value[child.key] = value;
 
 		return metadata;
 	}
 
 	/**
-	 * Removes the frontmatter block from a file.
+	 * Update or inserts one field in an object.
 	 *
-	 * @param fileContent
+	 * @param path
+	 * @param value
+	 * @param metadata
 	 */
-	export function removeFrontmatter(fileContent: string): string {
-		return fileContent.replace(new RegExp(frontMatterRexExpPattern), '');
+	export function upsertField(path: string, value: any, metadata: object): any {
+		let { parent, child } = traverseObjectToParent(path, metadata);
+
+		if (parent === undefined) {
+			throw Error(`The parent to "${path}" does not exist in Object, please create the parent first`);
+		}
+
+		parent.value[child.key] = value;
+
+		return metadata;
 	}
 }
