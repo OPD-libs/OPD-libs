@@ -8,7 +8,10 @@ import { stringifyFrontmatter } from './ObsUtils';
  *
  * @throws OPDTraversalError if field is an invalid path to a metadata field.
  *
- * @param field
+ * @param field The field to find, this can also be a path to a nested object e.g. `foo.bar`,
+ * 				a path to a specific index in an array e.g. `foo[0]`
+ * 				or any combination of those e.g. `foo['bar'].baz[0]`,
+ * 				like you are used to from javascript, except that the `?` operator is **not** supported.
  * @param file
  * @param plugin
  * @param isInline unused for now
@@ -26,7 +29,10 @@ export function doesFieldExistInTFile(field: string, file: TFile, plugin: Plugin
  *
  * @throws OPDTraversalError if field is an invalid path to a metadata field.
  *
- * @param field
+ * @param field The field to get, this can also be a path to a nested object e.g. `foo.bar`,
+ * 				a path to a specific index in an array e.g. `foo[0]`
+ * 				or any combination of those e.g. `foo['bar'].baz[0]`,
+ * 				like you are used to from javascript, except that the `?` operator is **not** supported.
  * @param file
  * @param plugin
  * @param isInline unused for now
@@ -42,11 +48,15 @@ export function getFieldFromTFile(field: string, file: TFile, plugin: Plugin_2, 
  * Inserts a field in a files' metadata. If the field already exists, this method will throw.
  *
  * @throws Error If the field already exists.
- * @throws Error If the parent of the field to update/insert does not exist.
+ * @throws Error If the parent of the field to update/insert does not exist,
+ * 		   e.g. if the method is called with the field `foo.bar`, but `foo` does not exist in the metadata this method will throw.
  * @throws OPDTraversalError If field is an invalid path to a metadata field.
  *
- * @param field
- * @param value
+ * @param field The field to insert, this can also be a path to a nested object e.g. `foo.bar`,
+ * 				a path to a specific index in an array e.g. `foo[0]`
+ * 				or any combination of those e.g. `foo['bar'].baz[0]`,
+ * 				like you are used to from javascript, except that the `?` operator is **not** supported.
+ * @param value The new value of the field.
  * @param file
  * @param plugin
  * @param isInline unused for now
@@ -61,11 +71,15 @@ export async function insertFieldInTFile(field: string, value: any, file: TFile,
  * Updates a field in a files' metadata. If the field does not exist, this method will throw.
  *
  * @throws Error If the field does not exist.
- * @throws Error If the parent of the field to update/insert does not exist.
+ * @throws Error If the parent of the field to update/insert does not exist,
+ * 		   e.g. if the method is called with the field `foo.bar`, but `foo` does not exist in the metadata this method will throw.
  * @throws OPDTraversalError If field is an invalid path to a metadata field.
  *
- * @param field
- * @param value
+ * @param field The field to update, this can also be a path to a nested object e.g. `foo.bar`,
+ * 				a path to a specific index in an array e.g. `foo[0]`
+ * 				or any combination of those e.g. `foo['bar'].baz[0]`,
+ * 				like you are used to from javascript, except that the `?` operator is **not** supported.
+ * @param value The new value of the field.
  * @param file
  * @param plugin
  * @param isInline unused for now
@@ -80,11 +94,15 @@ export async function updateFieldInTFile(field: string, value: any, file: TFile,
  * Inserts or updates a field in a files' metadata.
  * This is more efficient than checking yourself with {@link doesFieldExistInTFile} and then inserting with {@link insertFieldInTFile} or updating with {@link updateFieldInTFile}.
  *
- * @throws Error If the parent of the field to update/insert does not exist.
+ * @throws Error If the parent of the field to update/insert does not exist,
+ * 		   e.g. if the method is called with the field `foo.bar`, but `foo` does not exist in the metadata this method will throw.
  * @throws OPDTraversalError If field is an invalid path to a metadata field.
  *
- * @param field
- * @param value
+ * @param field The field to update/insert, this can also be a path to a nested object e.g. `foo.bar`,
+ * 				a path to a specific index in an array e.g. `foo[0]`
+ * 				or any combination of those e.g. `foo['bar'].baz[0]`,
+ * 				like you are used to from javascript, except that the `?` operator is **not** supported.
+ * @param value The new value of the field.
  * @param file
  * @param plugin
  * @param isInline unused for now
@@ -98,16 +116,19 @@ export async function updateOrInsertFieldInTFile(field: string, value: any, file
 /**
  * Deletes a field in a files' metadata.
  *
- * @throws Error If the parent of the field to delete does not exist.
+ * @throws Error If the parent of the field to update/insert does not exist,
+ * 		   e.g. if the method is called with the field `foo.bar`, but `foo` does not exist in the metadata this method will throw.
  * @throws OPDTraversalError If field is an invalid path to a metadata field.
  *
- * @param field
- * @param value
+ * @param field The field to delete, this can also be a path to a nested object e.g. `foo.bar`,
+ * 				a path to a specific index in an array e.g. `foo[0]`
+ * 				or any combination of those e.g. `foo['bar'].baz[0]`,
+ * 				like you are used to from javascript, except that the `?` operator is **not** supported.
  * @param file
  * @param plugin
  * @param isInline unused for now
  */
-export async function deleteFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
+export async function deleteFieldInTFile(field: string, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
 	const metadata = Internal.getMetadataFromFileCache(file, plugin);
 	Internal.deleteField(field, metadata);
 	await Internal.updateFrontmatter(metadata, file, plugin);

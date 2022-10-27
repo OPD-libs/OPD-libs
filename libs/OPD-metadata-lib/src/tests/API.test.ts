@@ -38,6 +38,10 @@ beforeAll(() => {
 	};
 });
 
+afterEach(() => {
+	jest.clearAllMocks();
+});
+
 describe('When there is no metadata', () => {
 	describe('addFieldInTFile', () => {
 		test('should create a field successfully', async () => {
@@ -58,7 +62,6 @@ describe('When there is a single field of metadata', () => {
 			};
 			mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
 			await insertFieldInTFile('newlyCreated', 'test', sampleTFile, mockPlugin);
-			// TODO: this fails, but idk how, maybe the call counter needs to bre reset?
 			expect(modify).toHaveBeenCalledTimes(1);
 			expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
 		});

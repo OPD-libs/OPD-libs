@@ -44,7 +44,17 @@ export function parsePath(path: string): string[] {
 	validatePath(path);
 	return path
 		.split('.')
-		.map(x => x.split('[').map(y => (y.endsWith(']') ? y.substring(0, y.length - 1) : y)))
+		.map(x =>
+			x.split('[').map(y => {
+				if (y.endsWith(']')) {
+					y = y.slice(0, -1);
+				}
+				if (y.startsWith('"') && y.endsWith('"')) {
+					y = y.slice(1, -1);
+				}
+				return y;
+			})
+		)
 		.flat();
 }
 

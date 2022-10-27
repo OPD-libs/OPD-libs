@@ -57,6 +57,10 @@ describe('test traverseObject', () => {
 		expect(traverseObject('b[0].b_0_c[1].b_0_c_0_a', testObject)).toEqual(testObject.b[0].b_0_c[1].b_0_c_0_a);
 	});
 
+	test('object traversal using array notation', () => {
+		expect(traverseObject('a["a_a"]', testObject)).toEqual(testObject.a.a_a);
+	});
+
 	test('edge cases', () => {
 		expect(traverseObject('', testObject)).toEqual(testObject);
 		expect(traverseObject('a["b"].b.c.e', testObject)).toEqual(undefined);
@@ -99,8 +103,16 @@ describe('test validatePath', () => {
 
 		expect(() => validatePath('[]')).toThrow(OPDTraversalError);
 
-		expect(() => validatePath('[a.b]')).toThrow(OPDTraversalError);
+		expect(() => validatePath('[a]')).toThrow(OPDTraversalError);
 
-		expect(() => validatePath('[a.]')).toThrow(OPDTraversalError);
+		expect(() => validatePath('["a.b"]')).toThrow(OPDTraversalError);
+
+		expect(() => validatePath('["a."]')).toThrow(OPDTraversalError);
+
+		expect(() => validatePath('["a["]')).toThrow(OPDTraversalError);
+	});
+
+	test('should throw on other invalid paths', () => {
+		expect(() => validatePath('a]b')).toThrow(OPDTraversalError);
 	});
 });
