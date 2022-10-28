@@ -1,6 +1,6 @@
 {
 	"name": "@opd-libs/opd-metadata-lib",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A library for plugin developers for Obsidian.md, that provides helper methods for editing metadata.",
 	"main": "API.js",
 	"scripts": {
