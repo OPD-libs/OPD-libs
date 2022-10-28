@@ -18,26 +18,24 @@ const sampleTFile = {
 	},
 } as TFile;
 
-beforeAll(() => {
-	mockAppGenerator = (tfile: TFile, fileContents: string, fileMetadata: any) => {
-		return {
-			app: {
-				vault: {
-					getAbstractFileByPath: (_path: string): TFile => {
-						return tfile;
-					},
-					cachedRead: jest.fn(async (_file: TFile): Promise<string> => await fileContents),
-					modify: modify,
+mockAppGenerator = (tfile: TFile, fileContents: string, fileMetadata: any) => {
+	return {
+		app: {
+			vault: {
+				getAbstractFileByPath: (_path: string): TFile => {
+					return tfile;
 				},
-				metadataCache: {
-					getFileCache: (_tfile: TFile): any => {
-						return fileMetadata;
-					},
+				cachedRead: jest.fn(async (_file: TFile): Promise<string> => await fileContents),
+				modify: modify,
+			},
+			metadataCache: {
+				getFileCache: (_tfile: TFile): any => {
+					return fileMetadata;
 				},
 			},
-		} as unknown as App;
-	};
-});
+		},
+	} as unknown as App;
+};
 
 afterEach(() => {
 	jest.clearAllMocks();
@@ -60,11 +58,10 @@ describe('When there is a single field of metadata', () => {
 			title: 'Kimi no Na wa.',
 		},
 	};
+	mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
 
 	describe('insertFieldInTFile', () => {
 		test('should create a single string field successfully', async () => {
-			mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
-
 			await insertFieldInTFile('newlyCreated', 'test', sampleTFile, mockPlugin);
 
 			expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
@@ -77,7 +74,6 @@ describe('When there is a single field of metadata', () => {
 		});
 
 		test('should create a null valued field successfully', async () => {
-			mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
 			const insertThis = { newlyCreated: null };
 
 			await insertFieldInTFile(Object.keys(insertThis)[0], insertThis.newlyCreated, sampleTFile, mockPlugin);
