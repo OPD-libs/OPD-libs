@@ -32,6 +32,6 @@ jobs:
       - working-directory: ./libs/OPD-metadata-lib
         run: npm ci
       - working-directory: ./libs/OPD-metadata-lib
-        run: npm publish
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
