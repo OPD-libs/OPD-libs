@@ -59,32 +59,21 @@ describe('When there is a single field of metadata', () => {
 		},
 	};
 	mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
+	const initialFrontmatter = { ...mockMetadata.frontmatter };
 
 	describe('insertFieldInTFile', () => {
-		test('should create a single string field successfully', async () => {
-			const insertThis = { newlyCreated: 'test' };
-			await insertFieldInTFile(Object.keys(insertThis)[0], insertThis.newlyCreated, sampleTFile, mockPlugin);
+		const testInputs = ['test', null];
 
-			expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
-			expect(stringifyFrontmatter).toHaveBeenCalledWith({
-				title: 'Kimi no Na wa.',
-				...insertThis,
-			});
-			expect(modify).toHaveBeenCalledTimes(1);
-			expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
-		});
+		test.each([...testInputs.map(t => [typeof t, t, { ...initialFrontmatter, newlyCreated: t }])])(
+			'should create a single %s field with value %s',
+			async (_type, _value, expectedFrontmatter) => {
+				await insertFieldInTFile('newlyCreated', expectedFrontmatter.newlyCreated, sampleTFile, mockPlugin);
 
-		test('should create a null valued field successfully', async () => {
-			const insertThis = { newlyCreated: null };
-
-			await insertFieldInTFile(Object.keys(insertThis)[0], insertThis.newlyCreated, sampleTFile, mockPlugin);
-
-			expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
-			expect(stringifyFrontmatter).toHaveBeenCalledWith({
-				title: 'Kimi no Na wa.',
-				...insertThis,
-			});
-			expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
-		});
+				expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
+				expect(stringifyFrontmatter).toHaveBeenCalledWith(expectedFrontmatter);
+				expect(modify).toHaveBeenCalledTimes(1);
+				expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
+			}
+		);
 	});
 });
