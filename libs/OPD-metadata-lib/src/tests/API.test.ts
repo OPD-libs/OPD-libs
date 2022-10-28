@@ -64,7 +64,7 @@ describe('When there is a single field of metadata', () => {
 	describe('insertFieldInTFile', () => {
 		const testInputs = ['test', null];
 
-		test.each([...testInputs.map(t => [typeof t, t, { ...initialFrontmatter, newlyCreated: t }])])(
+		test.each(testInputs.map(t => [typeof t, t, { ...initialFrontmatter, newlyCreated: t }]))(
 			'should create a single %s field with value %s',
 			async (_type, _value, expectedFrontmatter) => {
 				await insertFieldInTFile('newlyCreated', expectedFrontmatter.newlyCreated, sampleTFile, mockPlugin);
