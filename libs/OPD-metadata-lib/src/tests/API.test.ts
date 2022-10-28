@@ -1,5 +1,6 @@
 import { App, DataWriteOptions, Plugin_2, TFile } from 'obsidian';
 import { insertFieldInTFile } from '../API';
+import { stringifyFrontmatter } from '../ObsUtils';
 
 jest.mock('../ObsUtils');
 let mockPlugin: Plugin_2;
@@ -52,16 +53,24 @@ describe('When there is no metadata', () => {
 		});
 	});
 });
+
 describe('When there is a single field of metadata', () => {
 	describe('insertFieldInTFile', () => {
-		test('should create a field successfully', async () => {
+		test('should create a single string field successfully', async () => {
 			const mockMetadata: any = {
 				frontmatter: {
 					title: 'Kimi no Na wa.',
 				},
 			};
 			mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
+
 			await insertFieldInTFile('newlyCreated', 'test', sampleTFile, mockPlugin);
+
+			expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
+			expect(stringifyFrontmatter).toHaveBeenCalledWith({
+				title: 'Kimi no Na wa.',
+				newlyCreated: 'test',
+			});
 			expect(modify).toHaveBeenCalledTimes(1);
 			expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
 		});
