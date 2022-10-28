@@ -4,9 +4,6 @@
 name: publish metadata lib
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  push:
-    branches: [ release ]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
@@ -18,9 +15,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: cd libs/OPD-metadata-lib
-      - run: npm ci
-      - run: npm test
+      - working-directory: ./libs/OPD-metadata-lib
+        run: npm ci
+      - working-directory: ./libs/OPD-metadata-lib
+        run: npm test
 
   publish-npm:
     needs: build
@@ -31,8 +29,9 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: cd libs/OPD-metadata-lib
-      - run: npm ci
-      - run: npm publish
+      - working-directory: ./libs/OPD-metadata-lib
+        run: npm ci
+      - working-directory: ./libs/OPD-metadata-lib
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
