@@ -1,18 +1,12 @@
 {
-    "compilerOptions": {
-      "target": "ES6",
-      "module": "commonjs",
-      "declaration": true,
-      "outDir": "./lib",
-      "strict": true,
-      "lib": [
-        "DOM",
-        "ES5",
-        "ES6",
-        "ES7",
-        "ES2017"
-      ]
-    },
-    "include": ["src"],
-    "exclude": ["node_modules", "**/__tests__/*"]
-  }
+	"compilerOptions": {
+		"target": "ES6",
+		"module": "commonjs",
+		"declaration": true,
+		"outDir": "./lib",
+		"strict": true,
+		"lib": ["DOM", "ES5", "ES6", "ES7", "ES2017"]
+	},
+	"include": ["src"],
+	"exclude": ["node_modules", "**/tests/*"]
+}
