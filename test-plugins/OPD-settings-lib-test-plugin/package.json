@@ -23,6 +23,7 @@
 	},
 	"dependencies": {
 		"esbuild-plugin-copy-watch": "^0.0.7",
-		"opd-settings-lib": "file:../../libs/OPD-settings-lib"
+		"opd-settings-lib": "file:../../libs/OPD-settings-lib",
+		"opd-metadata-lib": "file:../../libs/OPD-metadata-lib"
 	}
 }
