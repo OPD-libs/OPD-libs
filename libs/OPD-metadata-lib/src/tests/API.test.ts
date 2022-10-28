@@ -62,12 +62,13 @@ describe('When there is a single field of metadata', () => {
 
 	describe('insertFieldInTFile', () => {
 		test('should create a single string field successfully', async () => {
-			await insertFieldInTFile('newlyCreated', 'test', sampleTFile, mockPlugin);
+			const insertThis = { newlyCreated: 'test' };
+			await insertFieldInTFile(Object.keys(insertThis)[0], insertThis.newlyCreated, sampleTFile, mockPlugin);
 
 			expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
 			expect(stringifyFrontmatter).toHaveBeenCalledWith({
 				title: 'Kimi no Na wa.',
-				newlyCreated: 'test',
+				...insertThis,
 			});
 			expect(modify).toHaveBeenCalledTimes(1);
 			expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
