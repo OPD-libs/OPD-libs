@@ -5,7 +5,7 @@ import { stringifyFrontmatter } from '../ObsUtils';
 jest.mock('../ObsUtils');
 let mockPlugin: Plugin_2;
 let mockAppGenerator: (tfile: TFile, fileContents: string, fileMetadata: any) => App;
-const modify = jest.fn(async (file: TFile, contents: string, options?: DataWriteOptions | null) => {});
+const modify = jest.fn(async (file: TFile, contents: string, options?: DataWriteOptions | null) => { });
 const sampleTFile = {
 	path: 'Media DB/Kimi no Na wa (2016).md',
 	name: 'Kimi no Na wa (2016).md',
@@ -17,6 +17,7 @@ const sampleTFile = {
 		size: 475,
 	},
 } as TFile;
+let initialFrontmatter: any;
 
 mockAppGenerator = (tfile: TFile, fileContents: string, fileMetadata: any) => {
 	return {
@@ -53,24 +54,38 @@ describe('When there is no metadata', () => {
 });
 
 describe('When there is a single field of metadata', () => {
-	const mockMetadata: any = {
-		frontmatter: {
-			title: 'Kimi no Na wa.',
-		},
-	};
-	mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
-	const initialFrontmatter = { ...mockMetadata.frontmatter };
+	beforeAll(() => {
+		const mockMetadata: any = {
+			frontmatter: {
+				title: 'Kimi no Na wa.',
+			},
+		};
+		mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
+		initialFrontmatter = { ...mockMetadata.frontmatter };
+	})
 
 	describe('insertFieldInTFile', () => {
-		const testInputs = ['test', null];
-
-		test.each(testInputs.map(t => [typeof t, t, { ...initialFrontmatter, newlyCreated: t }]))(
-			'should create a single %s field with value %s',
-			async (_type, _value, expectedFrontmatter) => {
-				await insertFieldInTFile('newlyCreated', expectedFrontmatter.newlyCreated, sampleTFile, mockPlugin);
+		test.each`
+			value					| type 
+			${'test'} 				| ${'string'}
+			${32}					| ${'number'}
+			${ 4.17}				| ${'decimal'}
+			${ null}				| ${'null'}
+			${ undefined}			| ${'undefined'}
+			${ []}					| ${'array'}
+			${ ["test"]}			| ${'array'}
+			${ [32]}				| ${'array'}
+			${{}}					| ${'object'}
+			${{ key: "value" }}		| ${'object'}
+			${{ key: undefined }}	| ${'object'}
+		`
+		(
+			'should create a single $type field with value $value',
+			async ({ value} ) => {
+				await insertFieldInTFile('newlyCreated', value, sampleTFile, mockPlugin);
 
 				expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
-				expect(stringifyFrontmatter).toHaveBeenCalledWith(expectedFrontmatter);
+				expect(stringifyFrontmatter).toHaveBeenCalledWith({...initialFrontmatter, newlyCreated: value});
 				expect(modify).toHaveBeenCalledTimes(1);
 				expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
 			}
