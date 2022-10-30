@@ -43,7 +43,13 @@ afterEach(() => {
 });
 
 describe('When there is no metadata', () => {
-	describe('addFieldInTFile', () => {
+	beforeAll(() => {
+		const mockMetadata: any = {};
+		mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
+		initialFrontmatter = { ...mockMetadata.frontmatter };
+	});
+
+	describe('insertFieldInTFile', () => {
 		test('should create a field successfully', async () => {
 			mockPlugin = { ...mockAppGenerator(sampleTFile, '', {}) } as unknown as Plugin_2;
 			await insertFieldInTFile('newlyCreated', 'test', sampleTFile, mockPlugin);
@@ -83,8 +89,6 @@ describe('When there is a single field of metadata', () => {
 
 			expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
 			expect(stringifyFrontmatter).toHaveBeenCalledWith({ ...initialFrontmatter, newlyCreated: value });
-			expect(modify).toHaveBeenCalledTimes(1);
-			expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
 		});
 	});
 });
