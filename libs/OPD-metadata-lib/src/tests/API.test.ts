@@ -56,6 +56,28 @@ describe('When there is no metadata', () => {
 			expect(modify).toHaveBeenCalledTimes(1);
 			expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
 		});
+
+		test.each`
+			key
+			${2}
+			${'🎈'}
+			${'field value'}
+			${'field-value'}
+			${'🎈🎃'}
+			${''}
+			${"\\''"}
+			${'${console.log(lol)}'}
+			${'??'}
+			${'~+'}
+			${'🛒'}
+			${{}}
+			${[]}
+		`('should create a field named $key', async ({ key }) => {
+			await insertFieldInTFile(key, 'test', sampleTFile, mockPlugin);
+
+			expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
+			expect(stringifyFrontmatter).toHaveBeenCalledWith({ ...initialFrontmatter, key: 'test' });
+		});
 	});
 });
 
