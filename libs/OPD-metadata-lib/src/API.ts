@@ -165,20 +165,3 @@ function updateParsedFrontmatter(plugin: Plugin_2, file: TFile, field: string, v
 	}
 	return frontmatter;
 }
-
-/**
- * UNUSED
- * @deprecated
- *
- * @param field
- * @param value
- * @param file
- * @param plugin
- * @param isInline
- */
-export async function createFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
-	let frontmatter = updateParsedFrontmatter(plugin, file, field, value);
-	const updatedYaml = stringifyFrontmatter(frontmatter);
-	let fileContents = await generateFileContents(plugin, file, updatedYaml);
-	await plugin.app.vault.modify(file, fileContents);
-}

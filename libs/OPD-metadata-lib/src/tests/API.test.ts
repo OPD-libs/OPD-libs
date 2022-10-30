@@ -5,7 +5,7 @@ import { stringifyFrontmatter } from '../ObsUtils';
 jest.mock('../ObsUtils');
 let mockPlugin: Plugin_2;
 let mockAppGenerator: (tfile: TFile, fileContents: string, fileMetadata: any) => App;
-const modify = jest.fn(async (file: TFile, contents: string, options?: DataWriteOptions | null) => { });
+const modify = jest.fn(async (file: TFile, contents: string, options?: DataWriteOptions | null) => {});
 const sampleTFile = {
 	path: 'Media DB/Kimi no Na wa (2016).md',
 	name: 'Kimi no Na wa (2016).md',
@@ -62,33 +62,29 @@ describe('When there is a single field of metadata', () => {
 		};
 		mockPlugin = { ...mockAppGenerator(sampleTFile, '', mockMetadata) } as unknown as Plugin_2;
 		initialFrontmatter = { ...mockMetadata.frontmatter };
-	})
+	});
 
 	describe('insertFieldInTFile', () => {
 		test.each`
-			value					| type 
-			${'test'} 				| ${'string'}
-			${32}					| ${'number'}
-			${ 4.17}				| ${'decimal'}
-			${ null}				| ${'null'}
-			${ undefined}			| ${'undefined'}
-			${ []}					| ${'array'}
-			${ ["test"]}			| ${'array'}
-			${ [32]}				| ${'array'}
-			${{}}					| ${'object'}
-			${{ key: "value" }}		| ${'object'}
-			${{ key: undefined }}	| ${'object'}
-		`
-		(
-			'should create a single $type field with value $value',
-			async ({ value} ) => {
-				await insertFieldInTFile('newlyCreated', value, sampleTFile, mockPlugin);
+			value                 | type
+			${'test'}             | ${'string'}
+			${32}                 | ${'number'}
+			${4.17}               | ${'decimal'}
+			${null}               | ${'null'}
+			${undefined}          | ${'undefined'}
+			${[]}                 | ${'array'}
+			${['test']}           | ${'array'}
+			${[32]}               | ${'array'}
+			${{}}                 | ${'object'}
+			${{ key: 'value' }}   | ${'object'}
+			${{ key: undefined }} | ${'object'}
+		`('should create a single $type field with value $value', async ({ value }) => {
+			await insertFieldInTFile('newlyCreated', value, sampleTFile, mockPlugin);
 
-				expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
-				expect(stringifyFrontmatter).toHaveBeenCalledWith({...initialFrontmatter, newlyCreated: value});
-				expect(modify).toHaveBeenCalledTimes(1);
-				expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
-			}
-		);
+			expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
+			expect(stringifyFrontmatter).toHaveBeenCalledWith({ ...initialFrontmatter, newlyCreated: value });
+			expect(modify).toHaveBeenCalledTimes(1);
+			expect(mockPlugin.app.vault.cachedRead).toHaveBeenCalledTimes(1);
+		});
 	});
 });
