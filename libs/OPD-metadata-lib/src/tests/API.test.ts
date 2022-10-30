@@ -72,18 +72,28 @@ describe('When there is a single field of metadata', () => {
 
 	describe('insertFieldInTFile', () => {
 		test.each`
-			value                 | type
-			${'test'}             | ${'string'}
-			${32}                 | ${'number'}
-			${4.17}               | ${'decimal'}
-			${null}               | ${'null'}
-			${undefined}          | ${'undefined'}
-			${[]}                 | ${'array'}
-			${['test']}           | ${'array'}
-			${[32]}               | ${'array'}
-			${{}}                 | ${'object'}
-			${{ key: 'value' }}   | ${'object'}
-			${{ key: undefined }} | ${'object'}
+			value                    | type
+			${'test'}                | ${'string'}
+			${32}                    | ${'number'}
+			${4.17}                  | ${'decimal'}
+			${null}                  | ${'null'}
+			${undefined}             | ${'undefined'}
+			${[]}                    | ${'array'}
+			${['test']}              | ${'array'}
+			${[32]}                  | ${'array'}
+			${{}}                    | ${'object'}
+			${{ key: 'value' }}      | ${'object'}
+			${{ key: undefined }}    | ${'object'}
+			${'🎈'}                  | ${'string'}
+			${'🎈🎃'}                | ${'string'}
+			${''}                    | ${'string'}
+			${"\\''"}                | ${'string'}
+			${'${console.log(lol)}'} | ${'string'}
+			${'??'}                  | ${'string'}
+			${'~+'}                  | ${'string'}
+			${'🛒'}                  | ${'string'}
+			${'{}'}                  | ${'string'}
+			${'[]'}                  | ${'string'}
 		`('should create a single $type field with value $value', async ({ value }) => {
 			await insertFieldInTFile('newlyCreated', value, sampleTFile, mockPlugin);
 
