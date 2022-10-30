@@ -134,6 +134,14 @@ export async function deleteFieldInTFile(field: string, file: TFile, plugin: Plu
 	await Internal.updateFrontmatter(metadata, file, plugin);
 }
 
+export function getFrontmatterOfTFile(file: TFile, plugin: Plugin_2): object {
+	return Internal.getMetadataFromFileCache(file, plugin);
+}
+
+export async function setFrontmatterOfTFile(metadata: object, file: TFile, plugin: Plugin_2): Promise<void> {
+	await Internal.updateFrontmatter(metadata, file, plugin);
+}
+
 /**
  * UNUSED
  * @deprecated
