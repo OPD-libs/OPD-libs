@@ -6,123 +6,11 @@
 	"children": [
 		{
 			"id": 69,
-			"name": "opd-metadata-lib",
+			"name": "@opd-libs/opd-metadata-lib",
 			"kind": 2,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
-				{
-					"id": 109,
-					"name": "createFieldInTFile",
-					"kind": 64,
-					"kindString": "Function",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "OPD-metadata-lib/src/API.ts",
-							"line": 179,
-							"character": 22,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-metadata-lib/src/API.ts#L179"
-						}
-					],
-					"signatures": [
-						{
-							"id": 110,
-							"name": "createFieldInTFile",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"summary": [
-									{
-										"kind": "text",
-										"text": "UNUSED"
-									}
-								],
-								"blockTags": [
-									{
-										"tag": "@deprecated",
-										"content": []
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 111,
-									"name": "field",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								},
-								{
-									"id": 112,
-									"name": "value",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								},
-								{
-									"id": 113,
-									"name": "file",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "TFile",
-										"qualifiedName": "TFile",
-										"package": "obsidian"
-									}
-								},
-								{
-									"id": 114,
-									"name": "plugin",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "Plugin_2",
-										"qualifiedName": "Plugin_2",
-										"package": "obsidian"
-									}
-								},
-								{
-									"id": 115,
-									"name": "isInline",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "boolean"
-									},
-									"defaultValue": "false"
-								}
-							],
-							"type": {
-								"type": "reference",
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "void"
-									}
-								],
-								"name": "Promise",
-								"qualifiedName": "Promise",
-								"package": "typescript"
-							}
-						}
-					]
-				},
 				{
 					"id": 103,
 					"name": "deleteFieldInTFile",
@@ -134,7 +22,7 @@
 							"fileName": "OPD-metadata-lib/src/API.ts",
 							"line": 131,
 							"character": 22,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-metadata-lib/src/API.ts#L131"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L131"
 						}
 					],
 					"signatures": [
@@ -313,7 +201,7 @@
 							"fileName": "OPD-metadata-lib/src/API.ts",
 							"line": 21,
 							"character": 16,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-metadata-lib/src/API.ts#L21"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L21"
 						}
 					],
 					"signatures": [
@@ -488,7 +376,7 @@
 							"fileName": "OPD-metadata-lib/src/API.ts",
 							"line": 42,
 							"character": 16,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-metadata-lib/src/API.ts#L42"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L42"
 						}
 					],
 					"signatures": [
@@ -649,6 +537,70 @@
 					]
 				},
 				{
+					"id": 109,
+					"name": "getFrontmatterOfTFile",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "OPD-metadata-lib/src/API.ts",
+							"line": 143,
+							"character": 16,
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L143"
+						}
+					],
+					"signatures": [
+						{
+							"id": 110,
+							"name": "getFrontmatterOfTFile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Returns the frontmatter from a file."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 111,
+									"name": "file",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "TFile",
+										"qualifiedName": "TFile",
+										"package": "obsidian"
+									}
+								},
+								{
+									"id": 112,
+									"name": "plugin",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Plugin_2",
+										"qualifiedName": "Plugin_2",
+										"package": "obsidian"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						}
+					]
+				},
+				{
 					"id": 82,
 					"name": "insertFieldInTFile",
 					"kind": 64,
@@ -659,7 +611,7 @@
 							"fileName": "OPD-metadata-lib/src/API.ts",
 							"line": 64,
 							"character": 22,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-metadata-lib/src/API.ts#L64"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L64"
 						}
 					],
 					"signatures": [
@@ -856,6 +808,89 @@
 					]
 				},
 				{
+					"id": 113,
+					"name": "setFrontmatterOfTFile",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "OPD-metadata-lib/src/API.ts",
+							"line": 154,
+							"character": 22,
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L154"
+						}
+					],
+					"signatures": [
+						{
+							"id": 114,
+							"name": "setFrontmatterOfTFile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Updates the entire frontmatter of a file."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 115,
+									"name": "metadata",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								},
+								{
+									"id": 116,
+									"name": "file",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "TFile",
+										"qualifiedName": "TFile",
+										"package": "obsidian"
+									}
+								},
+								{
+									"id": 117,
+									"name": "plugin",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Plugin_2",
+										"qualifiedName": "Plugin_2",
+										"package": "obsidian"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				},
+				{
 					"id": 89,
 					"name": "updateFieldInTFile",
 					"kind": 64,
@@ -866,7 +901,7 @@
 							"fileName": "OPD-metadata-lib/src/API.ts",
 							"line": 87,
 							"character": 22,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-metadata-lib/src/API.ts#L87"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L87"
 						}
 					],
 					"signatures": [
@@ -1073,7 +1108,7 @@
 							"fileName": "OPD-metadata-lib/src/API.ts",
 							"line": 110,
 							"character": 22,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-metadata-lib/src/API.ts#L110"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L110"
 						}
 					],
 					"signatures": [
@@ -1295,11 +1330,12 @@
 				{
 					"title": "Functions",
 					"children": [
-						109,
 						103,
 						70,
 						76,
+						109,
 						82,
+						113,
 						89,
 						96
 					]
@@ -1310,7 +1346,7 @@
 					"fileName": "OPD-metadata-lib/src/API.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-metadata-lib/src/API.ts#L1"
+					"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L1"
 				}
 			]
 		},
@@ -1361,7 +1397,7 @@
 													"fileName": "OPD-settings-lib/src/index.ts",
 													"line": 32,
 													"character": 12,
-													"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L32"
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L32"
 												}
 											],
 											"signatures": [
@@ -1425,7 +1461,7 @@
 													"fileName": "OPD-settings-lib/src/index.ts",
 													"line": 28,
 													"character": 12,
-													"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L28"
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L28"
 												}
 											],
 											"type": {
@@ -1444,7 +1480,7 @@
 													"fileName": "OPD-settings-lib/src/index.ts",
 													"line": 29,
 													"character": 12,
-													"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L29"
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L29"
 												}
 											],
 											"type": {
@@ -1463,7 +1499,7 @@
 													"fileName": "OPD-settings-lib/src/index.ts",
 													"line": 30,
 													"character": 12,
-													"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L30"
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L30"
 												}
 											],
 											"type": {
@@ -1482,7 +1518,7 @@
 													"fileName": "OPD-settings-lib/src/index.ts",
 													"line": 38,
 													"character": 12,
-													"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L38"
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L38"
 												}
 											],
 											"signatures": [
@@ -1524,7 +1560,7 @@
 													"fileName": "OPD-settings-lib/src/index.ts",
 													"line": 60,
 													"character": 12,
-													"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L60"
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L60"
 												}
 											],
 											"signatures": [
@@ -1584,7 +1620,7 @@
 											"fileName": "OPD-settings-lib/src/index.ts",
 											"line": 27,
 											"character": 21,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L27"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L27"
 										}
 									]
 								},
@@ -1599,7 +1635,7 @@
 											"fileName": "OPD-settings-lib/src/index.ts",
 											"line": 65,
 											"character": 24,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L65"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L65"
 										}
 									],
 									"signatures": [
@@ -1663,7 +1699,7 @@
 											"fileName": "OPD-settings-lib/src/index.ts",
 											"line": 69,
 											"character": 24,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L69"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L69"
 										}
 									],
 									"signatures": [
@@ -1715,7 +1751,7 @@
 									"fileName": "OPD-settings-lib/src/index.ts",
 									"line": 26,
 									"character": 21,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L26"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L26"
 								}
 							]
 						},
@@ -1737,7 +1773,7 @@
 											"fileName": "OPD-settings-lib/src/index.ts",
 											"line": 19,
 											"character": 8,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L19"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L19"
 										}
 									],
 									"signatures": [
@@ -1833,7 +1869,7 @@
 											"fileName": "OPD-settings-lib/src/index.ts",
 											"line": 16,
 											"character": 8,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L16"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L16"
 										}
 									],
 									"type": {
@@ -1855,7 +1891,7 @@
 											"fileName": "OPD-settings-lib/src/index.ts",
 											"line": 17,
 											"character": 8,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L17"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L17"
 										}
 									],
 									"type": {
@@ -1882,7 +1918,7 @@
 											"fileName": "OPD-settings-lib/src/index.ts",
 											"line": 15,
 											"character": 8,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L15"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L15"
 										}
 									],
 									"type": {
@@ -1913,7 +1949,7 @@
 									"fileName": "OPD-settings-lib/src/index.ts",
 									"line": 14,
 									"character": 17,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L14"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L14"
 								}
 							],
 							"typeParameters": [
@@ -1948,7 +1984,7 @@
 											"fileName": "OPD-settings-lib/src/index.ts",
 											"line": 11,
 											"character": 8,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L11"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L11"
 										}
 									],
 									"type": {
@@ -1968,7 +2004,7 @@
 											"fileName": "OPD-settings-lib/src/index.ts",
 											"line": 10,
 											"character": 8,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L10"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L10"
 										}
 									],
 									"type": {
@@ -1992,7 +2028,7 @@
 									"fileName": "OPD-settings-lib/src/index.ts",
 									"line": 9,
 									"character": 21,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L9"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L9"
 								}
 							],
 							"typeParameters": [
@@ -2020,7 +2056,7 @@
 									"fileName": "OPD-settings-lib/src/index.ts",
 									"line": 6,
 									"character": 16,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L6"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L6"
 								}
 							],
 							"typeParameters": [
@@ -2045,7 +2081,7 @@
 											"fileName": "OPD-settings-lib/src/index.ts",
 											"line": 6,
 											"character": 45,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L6"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L6"
 										}
 									],
 									"signatures": [
@@ -2101,7 +2137,7 @@
 									"fileName": "OPD-settings-lib/src/index.ts",
 									"line": 7,
 									"character": 16,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L7"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L7"
 								}
 							],
 							"type": {
@@ -2130,7 +2166,7 @@
 									"fileName": "OPD-settings-lib/src/index.ts",
 									"line": 119,
 									"character": 20,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L119"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L119"
 								}
 							],
 							"signatures": [
@@ -2216,7 +2252,7 @@
 									"fileName": "OPD-settings-lib/src/index.ts",
 									"line": 109,
 									"character": 20,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L109"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L109"
 								}
 							],
 							"signatures": [
@@ -2283,7 +2319,7 @@
 									"fileName": "OPD-settings-lib/src/index.ts",
 									"line": 97,
 									"character": 20,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L97"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L97"
 								}
 							],
 							"signatures": [
@@ -2371,7 +2407,7 @@
 									"fileName": "OPD-settings-lib/src/index.ts",
 									"line": 123,
 									"character": 20,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L123"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L123"
 								}
 							],
 							"signatures": [
@@ -2469,7 +2505,7 @@
 							"fileName": "OPD-settings-lib/src/index.ts",
 							"line": 4,
 							"character": 17,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L4"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L4"
 						}
 					]
 				}
@@ -2487,7 +2523,7 @@
 					"fileName": "OPD-settings-lib/src/index.ts",
 					"line": 4,
 					"character": 0,
-					"url": "https://github.com/OPD-libs/OPD-libs/blob/5852bd1/libs/OPD-settings-lib/src/index.ts#L4"
+					"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L4"
 				}
 			]
 		}
