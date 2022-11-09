@@ -135,6 +135,27 @@ export async function deleteFieldInTFile(field: string, file: TFile, plugin: Plu
 }
 
 /**
+ * Returns the frontmatter from a file.
+ *
+ * @param file
+ * @param plugin
+ */
+export function getFrontmatterOfTFile(file: TFile, plugin: Plugin_2): object {
+	return Internal.getMetadataFromFileCache(file, plugin);
+}
+
+/**
+ * Updates the entire frontmatter of a file.
+ *
+ * @param metadata
+ * @param file
+ * @param plugin
+ */
+export async function setFrontmatterOfTFile(metadata: object, file: TFile, plugin: Plugin_2): Promise<void> {
+	await Internal.updateFrontmatter(metadata, file, plugin);
+}
+
+/**
  * UNUSED
  * @deprecated
  *
@@ -145,40 +166,4 @@ export async function deleteFieldInTFile(field: string, file: TFile, plugin: Plu
 async function generateFileContents(plugin: Plugin_2, file: TFile, frontmatterAsYaml: string) {
 	const fileContents = await plugin.app.vault.cachedRead(file);
 	return fileContents.replace(/^---\n(.*\n)*---/, frontmatterAsYaml);
-}
-
-/**
- * UNUSED
- * @deprecated
- *
- * @param plugin
- * @param file
- * @param field
- * @param value
- */
-function updateParsedFrontmatter(plugin: Plugin_2, file: TFile, field: string, value: any): FrontMatterCache {
-	let frontmatter: FrontMatterCache | undefined = plugin.app.metadataCache.getFileCache(file)?.frontmatter;
-	if (frontmatter) {
-		frontmatter[field] = value;
-	} else {
-		frontmatter = { [field]: value } as unknown as FrontMatterCache;
-	}
-	return frontmatter;
-}
-
-/**
- * UNUSED
- * @deprecated
- *
- * @param field
- * @param value
- * @param file
- * @param plugin
- * @param isInline
- */
-export async function createFieldInTFile(field: string, value: any, file: TFile, plugin: Plugin_2, isInline: boolean = false): Promise<void> {
-	let frontmatter = updateParsedFrontmatter(plugin, file, field, value);
-	const updatedYaml = stringifyFrontmatter(frontmatter);
-	let fileContents = await generateFileContents(plugin, file, updatedYaml);
-	await plugin.app.vault.modify(file, fileContents);
 }
