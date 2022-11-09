@@ -84,6 +84,10 @@ describe('test validatePath', () => {
 		expect(() => validatePath('[0]')).not.toThrow();
 
 		expect(() => validatePath('[0][1]["a"]')).not.toThrow();
+
+		expect(() => validatePath('a-b.c')).not.toThrow();
+
+		expect(() => validatePath('a-b.$c')).not.toThrow();
 	});
 
 	test('should throw on empty path part', () => {

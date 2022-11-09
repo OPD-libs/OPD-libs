@@ -2,6 +2,9 @@ import { parseYaml, Plugin_2, TFile } from 'obsidian';
 import { parsePath, traverseObject, traverseObjectByPath, traverseObjectToParent } from './Utils';
 import { stringifyFrontmatter } from './ObsUtils';
 
+/**
+ * `Internal` holds methods that the API uses internally. The methods that we expect a plugin to use are within `API.ts`.
+ */
 export namespace Internal {
 	/**
 	 * Regex Expression to match the markdown frontmatter block.
