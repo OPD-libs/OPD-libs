@@ -162,30 +162,10 @@ describe('When there is a single field of metadata', () => {
 			${'Title'}
 			${'title.foo'}
 			${'foo'}
-			${'bar'}
-			${'test'}                
-			${32}                    
-			${4.17}                  
 			${null}                  
 			${undefined}             
-			${[]}                    
-			${['test']}              
-			${[32]}                  
-			${{}}                    
-			${{ key: 'value' }}      
-			${{ key: undefined }}    
-			${'🎈'}                 
-			${'🎈🎃'}                 
-			${''}                    
-			${"\\''"}                
-			${'${console.log(lol)}'} 
-			${'??'}                  
-			${'~+'}                  
-			${'🛒'}                  
-			${'{}'}                  
-			${'[]'}                  
 			${"foo['bar'].baz[0]"}                  
-		`('should fail when trying to delete a valid key twice', async ({ key }) => {
+		`('should return false when trying using non-existent key', async ({ key }) => {
 			expect(doesFieldExistInTFile(key, sampleTFile, mockPlugin)).toEqual(false);
 		});
 
@@ -209,31 +189,8 @@ describe('When there is a single field of metadata', () => {
 			key                    	
 			${'Title'}
 			${'title.foo'}
-			${'foo'}
-			${'bar'}
-			${'test'}                
-			${32}                    
-			${4.17}                  
-			${null}                  
-			${undefined}             
-			${[]}                    
-			${['test']}              
-			${[32]}                  
-			${{}}                    
-			${{key: 'value'}}      
-			${{key: undefined}}    
-			${'🎈'}                 
-			${'🎈🎃'}                 
-			${''}                    
-			${"\\''"}                
-			${'${console.log(lol)}'} 
-			${'??'}                  
-			${'~+'}                  
-			${'🛒'}                  
-			${'{}'}                  
-			${'[]'}                  
 			${"foo['bar'].baz[0]"}                  
-		`('should return undefined when trying to get a non-existing key', async ({key}) => {
+		`("should return undefined when the key doesn't exist", async ({key}) => {
 			expect(getFieldFromTFile(key, sampleTFile, mockPlugin)).toBeUndefined();
 		});
 
