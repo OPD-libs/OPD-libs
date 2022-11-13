@@ -1,6 +1,5 @@
-import { FrontMatterCache, Plugin_2, TFile } from 'obsidian';
+import { Plugin_2, TFile } from 'obsidian';
 import { Internal } from './Internal';
-import { stringifyFrontmatter } from './ObsUtils';
 
 /**
  * Checks whether a field exists inside a files' metadata.
@@ -134,42 +133,23 @@ export async function deleteFieldInTFile(field: string, file: TFile, plugin: Plu
 	await Internal.updateFrontmatter(metadata, file, plugin);
 }
 
+/**
+ * Returns the frontmatter from a file.
+ *
+ * @param file
+ * @param plugin
+ */
 export function getFrontmatterOfTFile(file: TFile, plugin: Plugin_2): object {
 	return Internal.getMetadataFromFileCache(file, plugin);
 }
 
+/**
+ * Updates the entire frontmatter of a file.
+ *
+ * @param metadata
+ * @param file
+ * @param plugin
+ */
 export async function setFrontmatterOfTFile(metadata: object, file: TFile, plugin: Plugin_2): Promise<void> {
 	await Internal.updateFrontmatter(metadata, file, plugin);
-}
-
-/**
- * UNUSED
- * @deprecated
- *
- * @param plugin
- * @param file
- * @param frontmatterAsYaml
- */
-async function generateFileContents(plugin: Plugin_2, file: TFile, frontmatterAsYaml: string) {
-	const fileContents = await plugin.app.vault.cachedRead(file);
-	return fileContents.replace(/^---\n(.*\n)*---/, frontmatterAsYaml);
-}
-
-/**
- * UNUSED
- * @deprecated
- *
- * @param plugin
- * @param file
- * @param field
- * @param value
- */
-function updateParsedFrontmatter(plugin: Plugin_2, file: TFile, field: string, value: any): FrontMatterCache {
-	let frontmatter: FrontMatterCache | undefined = plugin.app.metadataCache.getFileCache(file)?.frontmatter;
-	if (frontmatter) {
-		frontmatter[field] = value;
-	} else {
-		frontmatter = { [field]: value } as unknown as FrontMatterCache;
-	}
-	return frontmatter;
 }
