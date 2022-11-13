@@ -1,6 +1,7 @@
 import { App, DataWriteOptions, Plugin_2, TFile } from 'obsidian';
-import { insertFieldInTFile } from '../API';
+import {deleteFieldInTFile, doesFieldExistInTFile, getFieldFromTFile, insertFieldInTFile} from '../API';
 import { stringifyFrontmatter } from '../ObsUtils';
+import {OPDTraversalError} from "../Utils";
 
 jest.mock('../ObsUtils');
 let mockPlugin: Plugin_2;
@@ -121,6 +122,126 @@ describe('When there is a single field of metadata', () => {
 
 			expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
 			expect(stringifyFrontmatter).toHaveBeenCalledWith({ ...initialFrontmatter, newlyCreated: value });
+		});
+	});
+
+	describe('deleteFieldFromTFile', () => {
+		test.each`
+			key                    	
+			${'title'}
+		`('should successfully delete a valid key', async ({ key }) => {
+			await deleteFieldInTFile(key, sampleTFile, mockPlugin);
+
+			expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
+			expect(stringifyFrontmatter).toHaveBeenCalledWith({});
+		});
+
+		test.each`
+			key                    	
+			${'title'}
+			// ${'title.foo'}
+		`('should fail when trying to delete a valid key twice', async ({ key }) => {
+			await deleteFieldInTFile(key, sampleTFile, mockPlugin);
+			await expect(async () => await deleteFieldInTFile(key, sampleTFile, mockPlugin)).rejects.toThrowError();
+
+			expect(stringifyFrontmatter).toHaveBeenCalledTimes(1);
+			expect(stringifyFrontmatter).toHaveBeenCalledWith({});
+		});
+	});
+
+	describe('doesFieldExistInTFile', () => {
+		test.each`
+			key                    	
+			${'title'}
+		`('should return true if field exists in TFile', async ({ key }) => {
+			expect(doesFieldExistInTFile(key, sampleTFile, mockPlugin)).toEqual(true);
+		});
+
+		test.each`
+			key                    	
+			${'Title'}
+			${'title.foo'}
+			${'foo'}
+			${'bar'}
+			${'test'}                
+			${32}                    
+			${4.17}                  
+			${null}                  
+			${undefined}             
+			${[]}                    
+			${['test']}              
+			${[32]}                  
+			${{}}                    
+			${{ key: 'value' }}      
+			${{ key: undefined }}    
+			${'🎈'}                 
+			${'🎈🎃'}                 
+			${''}                    
+			${"\\''"}                
+			${'${console.log(lol)}'} 
+			${'??'}                  
+			${'~+'}                  
+			${'🛒'}                  
+			${'{}'}                  
+			${'[]'}                  
+			${"foo['bar'].baz[0]"}                  
+		`('should fail when trying to delete a valid key twice', async ({ key }) => {
+			expect(doesFieldExistInTFile(key, sampleTFile, mockPlugin)).toEqual(false);
+		});
+
+		test.each`
+			key                    	
+			${'title?.nonexistent'}
+		`('should throw OPDTraversal error for an invalid path', async ({ key }) => {
+			expect(() => doesFieldExistInTFile(key, sampleTFile, mockPlugin)).toThrow(OPDTraversalError);
+		});
+	});
+
+	describe('getFieldFromTFile', () => {
+		test.each`
+			key                    	
+			${'title'}
+		`('should return correct value if field exists in TFile', async ({key}) => {
+			expect(getFieldFromTFile(key, sampleTFile, mockPlugin)).toEqual('Kimi no Na wa.');
+		});
+
+		test.each`
+			key                    	
+			${'Title'}
+			${'title.foo'}
+			${'foo'}
+			${'bar'}
+			${'test'}                
+			${32}                    
+			${4.17}                  
+			${null}                  
+			${undefined}             
+			${[]}                    
+			${['test']}              
+			${[32]}                  
+			${{}}                    
+			${{key: 'value'}}      
+			${{key: undefined}}    
+			${'🎈'}                 
+			${'🎈🎃'}                 
+			${''}                    
+			${"\\''"}                
+			${'${console.log(lol)}'} 
+			${'??'}                  
+			${'~+'}                  
+			${'🛒'}                  
+			${'{}'}                  
+			${'[]'}                  
+			${"foo['bar'].baz[0]"}                  
+		`('should return undefined when trying to get a non-existing key', async ({key}) => {
+			expect(getFieldFromTFile(key, sampleTFile, mockPlugin)).toBeUndefined();
+		});
+
+		test.each`
+			key                    	
+			${'title?.nonexistent'}
+		`('should throw OPDTraversal error for an invalid path', async ({key}) => {
+			expect(() => getFieldFromTFile(key, sampleTFile, mockPlugin)).toThrow(OPDTraversalError);
 		});
 	});
 });
