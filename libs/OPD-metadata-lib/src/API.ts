@@ -1,5 +1,6 @@
-import { Plugin_2, TFile } from 'obsidian';
+import { FrontMatterCache, Plugin_2, TFile } from 'obsidian';
 import { Internal } from './Internal';
+import { stringifyFrontmatter } from './ObsUtils';
 
 /**
  * Checks whether a field exists inside a files' metadata.
