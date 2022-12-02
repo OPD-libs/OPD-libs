@@ -1,6 +1,6 @@
 import { parseYaml, Plugin_2, TFile } from 'obsidian';
-import { parsePath, traverseObject, traverseObjectByPath, traverseObjectToParent } from './Utils';
 import { stringifyFrontmatter } from './ObsUtils';
+import { OPDObjectTraversalUtils } from '@opd-libs/opd-utils-lib/lib/API';
 
 /**
  * `Internal` holds methods that the API uses internally. The methods that we expect a plugin to use are within `API.ts`.
@@ -117,7 +117,7 @@ export namespace Internal {
 	 * @param metadata
 	 */
 	export function getField(path: string, metadata: object): any {
-		return traverseObject(path, metadata);
+		return OPDObjectTraversalUtils.traverseObject(path, metadata);
 	}
 
 	/**
@@ -127,7 +127,7 @@ export namespace Internal {
 	 * @param metadata
 	 */
 	export function deleteField(path: string, metadata: object): object {
-		let { parent, child } = traverseObjectToParent(path, metadata);
+		let { parent, child } = OPDObjectTraversalUtils.traverseObjectToParent(path, metadata);
 
 		if (parent.value === undefined) {
 			throw Error(`The parent of "${path}" does not exist in Object, can not delete child from non existing parent`);
@@ -154,7 +154,7 @@ export namespace Internal {
 	 * @param metadata
 	 */
 	export function updateField(path: string, value: any, metadata: object): any {
-		let { parent, child } = traverseObjectToParent(path, metadata);
+		let { parent, child } = OPDObjectTraversalUtils.traverseObjectToParent(path, metadata);
 
 		if (parent.value === undefined) {
 			throw Error(`The parent of "${path}" does not exist in Object, please create the parent first`);
@@ -177,7 +177,7 @@ export namespace Internal {
 	 * @param metadata
 	 */
 	export function insertField(path: string, value: any, metadata: object): any {
-		let { parent, child } = traverseObjectToParent(path, metadata);
+		let { parent, child } = OPDObjectTraversalUtils.traverseObjectToParent(path, metadata);
 
 		if (parent.value === undefined) {
 			throw Error(`The parent of "${path}" does not exist in Object, please create the parent first`);
@@ -200,7 +200,7 @@ export namespace Internal {
 	 * @param metadata
 	 */
 	export function updateOrInsertField(path: string, value: any, metadata: object): any {
-		let { parent, child } = traverseObjectToParent(path, metadata);
+		let { parent, child } = OPDObjectTraversalUtils.traverseObjectToParent(path, metadata);
 
 		if (parent.value === undefined) {
 			throw Error(`The parent of "${path}" does not exist in Object, please create the parent first`);
