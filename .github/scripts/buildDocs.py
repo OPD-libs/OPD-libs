@@ -7,7 +7,8 @@ base_path = Path(__file__).parent.parent.parent
 docs_rel_path = 'docs-generator/typedoc'
 metadata_lib_rel_path = 'libs/OPD-metadata-lib'
 settings_lib_rel_path = 'libs/OPD-settings-lib'
-lib_rel_paths = [metadata_lib_rel_path, settings_lib_rel_path]
+utils_lib_rel_path = 'libs/OPD-utils-lib'
+lib_rel_paths = [metadata_lib_rel_path, settings_lib_rel_path, utils_lib_rel_path]
 
 for lib_rel_path in lib_rel_paths:
     print('--------------------------------')

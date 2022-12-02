@@ -1,5 +1,5 @@
 {
-    "entryPoints": ["../../libs/OPD-settings-lib/", "../../libs/OPD-metadata-lib/"],
+    "entryPoints": ["../../libs/OPD-settings-lib/", "../../libs/OPD-metadata-lib/", "../../libs/OPD-utils-lib/"],
     "entryPointStrategy": "packages",
     "name": "OPD-libs"
 }
