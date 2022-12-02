@@ -19,10 +19,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "OPD-metadata-lib/src/API.ts",
+							"fileName": "libs/OPD-metadata-lib/src/API.ts",
 							"line": 131,
 							"character": 22,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L131"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-metadata-lib/src/API.ts#L131"
 						}
 					],
 					"signatures": [
@@ -45,7 +45,7 @@
 										"content": [
 											{
 												"kind": "text",
-												"text": "Error If the parent of the field to update/insert does not exist,\n\t\t   e.g. if the method is called with the field "
+												"text": "Error If the parent of the field to update/insert does not exist,\r\n\t\t   e.g. if the method is called with the field "
 											},
 											{
 												"kind": "code",
@@ -95,7 +95,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ",\n\t\t\t\ta path to a specific index in an array e.g. "
+												"text": ",\r\n\t\t\t\ta path to a specific index in an array e.g. "
 											},
 											{
 												"kind": "code",
@@ -103,7 +103,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\t\t\t\tor any combination of those e.g. "
+												"text": "\r\n\t\t\t\tor any combination of those e.g. "
 											},
 											{
 												"kind": "code",
@@ -111,7 +111,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ",\n\t\t\t\tlike you are used to from javascript, except that the "
+												"text": ",\r\n\t\t\t\tlike you are used to from javascript, except that the "
 											},
 											{
 												"kind": "code",
@@ -198,10 +198,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "OPD-metadata-lib/src/API.ts",
+							"fileName": "libs/OPD-metadata-lib/src/API.ts",
 							"line": 21,
 							"character": 16,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L21"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-metadata-lib/src/API.ts#L21"
 						}
 					],
 					"signatures": [
@@ -215,7 +215,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Checks whether a field exists inside a files' metadata.\nNote, when the field exists but the value is "
+										"text": "Checks whether a field exists inside a files' metadata.\r\nNote, when the field exists but the value is "
 									},
 									{
 										"kind": "code",
@@ -278,7 +278,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ",\n\t\t\t\ta path to a specific index in an array e.g. "
+												"text": ",\r\n\t\t\t\ta path to a specific index in an array e.g. "
 											},
 											{
 												"kind": "code",
@@ -286,7 +286,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\t\t\t\tor any combination of those e.g. "
+												"text": "\r\n\t\t\t\tor any combination of those e.g. "
 											},
 											{
 												"kind": "code",
@@ -294,7 +294,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ",\n\t\t\t\tlike you are used to from javascript, except that the "
+												"text": ",\r\n\t\t\t\tlike you are used to from javascript, except that the "
 											},
 											{
 												"kind": "code",
@@ -373,10 +373,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "OPD-metadata-lib/src/API.ts",
+							"fileName": "libs/OPD-metadata-lib/src/API.ts",
 							"line": 42,
 							"character": 16,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L42"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-metadata-lib/src/API.ts#L42"
 						}
 					],
 					"signatures": [
@@ -390,7 +390,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Returns the value of a field in a files' metadata.\nIf the field does not exist, this method will return "
+										"text": "Returns the value of a field in a files' metadata.\r\nIf the field does not exist, this method will return "
 									},
 									{
 										"kind": "code",
@@ -449,7 +449,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ",\n\t\t\t\ta path to a specific index in an array e.g. "
+												"text": ",\r\n\t\t\t\ta path to a specific index in an array e.g. "
 											},
 											{
 												"kind": "code",
@@ -457,7 +457,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\t\t\t\tor any combination of those e.g. "
+												"text": "\r\n\t\t\t\tor any combination of those e.g. "
 											},
 											{
 												"kind": "code",
@@ -465,7 +465,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ",\n\t\t\t\tlike you are used to from javascript, except that the "
+												"text": ",\r\n\t\t\t\tlike you are used to from javascript, except that the "
 											},
 											{
 												"kind": "code",
@@ -544,10 +544,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "OPD-metadata-lib/src/API.ts",
+							"fileName": "libs/OPD-metadata-lib/src/API.ts",
 							"line": 143,
 							"character": 16,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L143"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-metadata-lib/src/API.ts#L143"
 						}
 					],
 					"signatures": [
@@ -608,10 +608,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "OPD-metadata-lib/src/API.ts",
+							"fileName": "libs/OPD-metadata-lib/src/API.ts",
 							"line": 64,
 							"character": 22,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L64"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-metadata-lib/src/API.ts#L64"
 						}
 					],
 					"signatures": [
@@ -643,7 +643,7 @@
 										"content": [
 											{
 												"kind": "text",
-												"text": "Error If the parent of the field to update/insert does not exist,\n\t\t   e.g. if the method is called with the field "
+												"text": "Error If the parent of the field to update/insert does not exist,\r\n\t\t   e.g. if the method is called with the field "
 											},
 											{
 												"kind": "code",
@@ -693,7 +693,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ",\n\t\t\t\ta path to a specific index in an array e.g. "
+												"text": ",\r\n\t\t\t\ta path to a specific index in an array e.g. "
 											},
 											{
 												"kind": "code",
@@ -701,7 +701,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\t\t\t\tor any combination of those e.g. "
+												"text": "\r\n\t\t\t\tor any combination of those e.g. "
 											},
 											{
 												"kind": "code",
@@ -709,7 +709,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ",\n\t\t\t\tlike you are used to from javascript, except that the "
+												"text": ",\r\n\t\t\t\tlike you are used to from javascript, except that the "
 											},
 											{
 												"kind": "code",
@@ -815,10 +815,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "OPD-metadata-lib/src/API.ts",
+							"fileName": "libs/OPD-metadata-lib/src/API.ts",
 							"line": 154,
 							"character": 22,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L154"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-metadata-lib/src/API.ts#L154"
 						}
 					],
 					"signatures": [
@@ -898,10 +898,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "OPD-metadata-lib/src/API.ts",
+							"fileName": "libs/OPD-metadata-lib/src/API.ts",
 							"line": 87,
 							"character": 22,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L87"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-metadata-lib/src/API.ts#L87"
 						}
 					],
 					"signatures": [
@@ -933,7 +933,7 @@
 										"content": [
 											{
 												"kind": "text",
-												"text": "Error If the parent of the field to update/insert does not exist,\n\t\t   e.g. if the method is called with the field "
+												"text": "Error If the parent of the field to update/insert does not exist,\r\n\t\t   e.g. if the method is called with the field "
 											},
 											{
 												"kind": "code",
@@ -983,7 +983,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ",\n\t\t\t\ta path to a specific index in an array e.g. "
+												"text": ",\r\n\t\t\t\ta path to a specific index in an array e.g. "
 											},
 											{
 												"kind": "code",
@@ -991,7 +991,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\t\t\t\tor any combination of those e.g. "
+												"text": "\r\n\t\t\t\tor any combination of those e.g. "
 											},
 											{
 												"kind": "code",
@@ -999,7 +999,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ",\n\t\t\t\tlike you are used to from javascript, except that the "
+												"text": ",\r\n\t\t\t\tlike you are used to from javascript, except that the "
 											},
 											{
 												"kind": "code",
@@ -1105,10 +1105,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "OPD-metadata-lib/src/API.ts",
+							"fileName": "libs/OPD-metadata-lib/src/API.ts",
 							"line": 110,
 							"character": 22,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L110"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-metadata-lib/src/API.ts#L110"
 						}
 					],
 					"signatures": [
@@ -1122,7 +1122,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "Inserts or updates a field in a files' metadata.\nThis is more efficient than checking yourself with "
+										"text": "Inserts or updates a field in a files' metadata.\r\nThis is more efficient than checking yourself with "
 									},
 									{
 										"kind": "inline-tag",
@@ -1161,7 +1161,7 @@
 										"content": [
 											{
 												"kind": "text",
-												"text": "Error If the parent of the field to update/insert does not exist,\n\t\t   e.g. if the method is called with the field "
+												"text": "Error If the parent of the field to update/insert does not exist,\r\n\t\t   e.g. if the method is called with the field "
 											},
 											{
 												"kind": "code",
@@ -1211,7 +1211,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ",\n\t\t\t\ta path to a specific index in an array e.g. "
+												"text": ",\r\n\t\t\t\ta path to a specific index in an array e.g. "
 											},
 											{
 												"kind": "code",
@@ -1219,7 +1219,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\t\t\t\tor any combination of those e.g. "
+												"text": "\r\n\t\t\t\tor any combination of those e.g. "
 											},
 											{
 												"kind": "code",
@@ -1227,7 +1227,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ",\n\t\t\t\tlike you are used to from javascript, except that the "
+												"text": ",\r\n\t\t\t\tlike you are used to from javascript, except that the "
 											},
 											{
 												"kind": "code",
@@ -1343,10 +1343,3233 @@
 			],
 			"sources": [
 				{
-					"fileName": "OPD-metadata-lib/src/API.ts",
+					"fileName": "libs/OPD-metadata-lib/src/API.ts",
 					"line": 1,
 					"character": 0,
-					"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-metadata-lib/src/API.ts#L1"
+					"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-metadata-lib/src/API.ts#L1"
+				}
+			]
+		},
+		{
+			"id": 118,
+			"name": "@opd-libs/opd-utils-lib",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 169,
+					"name": "OPDObjectTraversalUtils",
+					"kind": 4,
+					"kindString": "Namespace",
+					"flags": {},
+					"children": [
+						{
+							"id": 185,
+							"name": "parsePath",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/ObjectTraversalUtils.ts",
+									"line": 82,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ObjectTraversalUtils.ts#L82"
+								}
+							],
+							"signatures": [
+								{
+									"id": 186,
+									"name": "parsePath",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Parses an object traversal path."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "the path as an array of its parts"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 187,
+											"name": "path",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The path to traverse the object along. This can be a path like "
+													},
+													{
+														"kind": "code",
+														"text": "`foo.bar`"
+													},
+													{
+														"kind": "text",
+														"text": ",\n\t\t\t\ta path to a specific index in an array e.g. "
+													},
+													{
+														"kind": "code",
+														"text": "`foo[0]`"
+													},
+													{
+														"kind": "text",
+														"text": "\n\t\t\t\tor any combination of those e.g. "
+													},
+													{
+														"kind": "code",
+														"text": "`foo['bar'].baz[0]`"
+													},
+													{
+														"kind": "text",
+														"text": ".\n\t\t\t\tLike the javascript notation, except that the "
+													},
+													{
+														"kind": "code",
+														"text": "`?`"
+													},
+													{
+														"kind": "text",
+														"text": " operator is **not** supported."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								}
+							]
+						},
+						{
+							"id": 170,
+							"name": "traverseObject",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/ObjectTraversalUtils.ts",
+									"line": 15,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ObjectTraversalUtils.ts#L15"
+								}
+							],
+							"signatures": [
+								{
+									"id": 171,
+									"name": "traverseObject",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Traverses an object along a path."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "the value at the end of the path or "
+													},
+													{
+														"kind": "code",
+														"text": "`undefined`"
+													},
+													{
+														"kind": "text",
+														"text": " if the value does not exist"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 172,
+											"name": "path",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The path to traverse the object along. This can be a path like "
+													},
+													{
+														"kind": "code",
+														"text": "`foo.bar`"
+													},
+													{
+														"kind": "text",
+														"text": ",\n\t\t\t\ta path to a specific index in an array e.g. "
+													},
+													{
+														"kind": "code",
+														"text": "`foo[0]`"
+													},
+													{
+														"kind": "text",
+														"text": "\n\t\t\t\tor any combination of those e.g. "
+													},
+													{
+														"kind": "code",
+														"text": "`foo['bar'].baz[0]`"
+													},
+													{
+														"kind": "text",
+														"text": ".\n\t\t\t\tLike the javascript notation, except that the "
+													},
+													{
+														"kind": "code",
+														"text": "`?`"
+													},
+													{
+														"kind": "text",
+														"text": " operator is **not** supported."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 173,
+											"name": "o",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the object to traverse"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							]
+						},
+						{
+							"id": 181,
+							"name": "traverseObjectByPath",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/ObjectTraversalUtils.ts",
+									"line": 58,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ObjectTraversalUtils.ts#L58"
+								}
+							],
+							"signatures": [
+								{
+									"id": 182,
+									"name": "traverseObjectByPath",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Traverses an object along a parsed."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "the value at the end of the path or "
+													},
+													{
+														"kind": "code",
+														"text": "`undefined`"
+													},
+													{
+														"kind": "text",
+														"text": " if the value does not exist"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 183,
+											"name": "pathParts",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The path to traverse the object along. This can be a path like "
+													},
+													{
+														"kind": "code",
+														"text": "`['foo', 'bar']`"
+													}
+												]
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											}
+										},
+										{
+											"id": 184,
+											"name": "o",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the object to traverse"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							]
+						},
+						{
+							"id": 174,
+							"name": "traverseObjectToParent",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/ObjectTraversalUtils.ts",
+									"line": 33,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ObjectTraversalUtils.ts#L33"
+								}
+							],
+							"signatures": [
+								{
+									"id": 175,
+									"name": "traverseObjectToParent",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Traverses an object along a path to the parent object of the path."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@throws",
+												"content": [
+													{
+														"kind": "text",
+														"text": "OPDUtilsObjectTraversalError if the path is empty"
+													}
+												]
+											},
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "the parent as well as the parsed path to reach the parent and the child as well as the key for the child"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 176,
+											"name": "path",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The path to traverse the object along. This can be a path like "
+													},
+													{
+														"kind": "code",
+														"text": "`foo.bar`"
+													},
+													{
+														"kind": "text",
+														"text": ",\n\t\t\t\ta path to a specific index in an array e.g. "
+													},
+													{
+														"kind": "code",
+														"text": "`foo[0]`"
+													},
+													{
+														"kind": "text",
+														"text": "\n\t\t\t\tor any combination of those e.g. "
+													},
+													{
+														"kind": "code",
+														"text": "`foo['bar'].baz[0]`"
+													},
+													{
+														"kind": "text",
+														"text": ".\n\t\t\t\tLike the javascript notation, except that the "
+													},
+													{
+														"kind": "code",
+														"text": "`?`"
+													},
+													{
+														"kind": "text",
+														"text": " operator is **not** supported."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 177,
+											"name": "o",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the object to traverse"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 178,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 180,
+													"name": "child",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "libs/OPD-utils-lib/src/ObjectTraversalUtils.ts",
+															"line": 33,
+															"character": 101,
+															"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ObjectTraversalUtils.ts#L33"
+														}
+													],
+													"type": {
+														"type": "reference",
+														"id": 263,
+														"typeArguments": [
+															{
+																"type": "intrinsic",
+																"name": "string"
+															},
+															{
+																"type": "intrinsic",
+																"name": "any"
+															}
+														],
+														"name": "KeyValuePair"
+													}
+												},
+												{
+													"id": 179,
+													"name": "parent",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "libs/OPD-utils-lib/src/ObjectTraversalUtils.ts",
+															"line": 33,
+															"character": 64,
+															"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ObjectTraversalUtils.ts#L33"
+														}
+													],
+													"type": {
+														"type": "reference",
+														"id": 263,
+														"typeArguments": [
+															{
+																"type": "array",
+																"elementType": {
+																	"type": "intrinsic",
+																	"name": "string"
+																}
+															},
+															{
+																"type": "intrinsic",
+																"name": "any"
+															}
+														],
+														"name": "KeyValuePair"
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Properties",
+													"children": [
+														180,
+														179
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "libs/OPD-utils-lib/src/ObjectTraversalUtils.ts",
+													"line": 33,
+													"character": 62,
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ObjectTraversalUtils.ts#L33"
+												}
+											]
+										}
+									}
+								}
+							]
+						},
+						{
+							"id": 188,
+							"name": "validatePath",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/ObjectTraversalUtils.ts",
+									"line": 111,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ObjectTraversalUtils.ts#L111"
+								}
+							],
+							"signatures": [
+								{
+									"id": 189,
+									"name": "validatePath",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Validates an object traversal path."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@throws",
+												"content": [
+													{
+														"kind": "text",
+														"text": "OPDUtilsObjectTraversalError if the path is invalid"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 190,
+											"name": "path",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The path to traverse the object along. This can be a path like "
+													},
+													{
+														"kind": "code",
+														"text": "`foo.bar`"
+													},
+													{
+														"kind": "text",
+														"text": ",\n\t\t\t\ta path to a specific index in an array e.g. "
+													},
+													{
+														"kind": "code",
+														"text": "`foo[0]`"
+													},
+													{
+														"kind": "text",
+														"text": "\n\t\t\t\tor any combination of those e.g. "
+													},
+													{
+														"kind": "code",
+														"text": "`foo['bar'].baz[0]`"
+													},
+													{
+														"kind": "text",
+														"text": ".\n\t\t\t\tLike the javascript notation, except that the "
+													},
+													{
+														"kind": "code",
+														"text": "`?`"
+													},
+													{
+														"kind": "text",
+														"text": " operator is **not** supported."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Functions",
+							"children": [
+								185,
+								170,
+								181,
+								174,
+								188
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "libs/OPD-utils-lib/src/ObjectTraversalUtils.ts",
+							"line": 1,
+							"character": 0,
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ObjectTraversalUtils.ts#L1"
+						}
+					]
+				},
+				{
+					"id": 119,
+					"name": "OPDParserUtils",
+					"kind": 4,
+					"kindString": "Namespace",
+					"flags": {},
+					"children": [
+						{
+							"id": 120,
+							"name": "EnclosingPair",
+							"kind": 128,
+							"kindString": "Class",
+							"flags": {},
+							"children": [
+								{
+									"id": 121,
+									"name": "constructor",
+									"kind": 512,
+									"kindString": "Constructor",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 9,
+											"character": 1,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L9"
+										}
+									],
+									"signatures": [
+										{
+											"id": 122,
+											"name": "new EnclosingPair",
+											"kind": 16384,
+											"kindString": "Constructor signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 123,
+													"name": "openingString",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 124,
+													"name": "closingString",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isOptional": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"id": 120,
+												"name": "EnclosingPair"
+											}
+										}
+									]
+								},
+								{
+									"id": 127,
+									"name": "_closingString",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isPrivate": true,
+										"isReadonly": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 7,
+											"character": 18,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L7"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 126,
+									"name": "_openingString",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isPrivate": true,
+										"isReadonly": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 6,
+											"character": 18,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L6"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 125,
+									"name": "openingEqualsClosing",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isReadonly": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 5,
+											"character": 10,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L5"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								},
+								{
+									"id": 130,
+									"name": "closingString",
+									"kind": 262144,
+									"kindString": "Accessor",
+									"flags": {
+										"isPublic": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 30,
+											"character": 12,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L30"
+										}
+									],
+									"getSignature": {
+										"id": 131,
+										"name": "closingString",
+										"kind": 524288,
+										"kindString": "Get signature",
+										"flags": {},
+										"type": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								},
+								{
+									"id": 128,
+									"name": "openingString",
+									"kind": 262144,
+									"kindString": "Accessor",
+									"flags": {
+										"isPublic": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 26,
+											"character": 12,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L26"
+										}
+									],
+									"getSignature": {
+										"id": 129,
+										"name": "openingString",
+										"kind": 524288,
+										"kindString": "Get signature",
+										"flags": {},
+										"type": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								},
+								{
+									"id": 135,
+									"name": "equals",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 43,
+											"character": 1,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L43"
+										}
+									],
+									"signatures": [
+										{
+											"id": 136,
+											"name": "equals",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 137,
+													"name": "other",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"id": 120,
+														"name": "EnclosingPair"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									]
+								},
+								{
+									"id": 132,
+									"name": "overlaps",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 34,
+											"character": 1,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L34"
+										}
+									],
+									"signatures": [
+										{
+											"id": 133,
+											"name": "overlaps",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 134,
+													"name": "other",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"id": 120,
+														"name": "EnclosingPair"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									]
+								},
+								{
+									"id": 138,
+									"name": "toString",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 50,
+											"character": 1,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L50"
+										}
+									],
+									"signatures": [
+										{
+											"id": 139,
+											"name": "toString",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Constructors",
+									"children": [
+										121
+									]
+								},
+								{
+									"title": "Properties",
+									"children": [
+										127,
+										126,
+										125
+									]
+								},
+								{
+									"title": "Accessors",
+									"children": [
+										130,
+										128
+									]
+								},
+								{
+									"title": "Methods",
+									"children": [
+										135,
+										132,
+										138
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+									"line": 4,
+									"character": 13,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L4"
+								}
+							]
+						},
+						{
+							"id": 140,
+							"name": "ParserUtils",
+							"kind": 128,
+							"kindString": "Class",
+							"flags": {},
+							"children": [
+								{
+									"id": 167,
+									"name": "constructor",
+									"kind": 512,
+									"kindString": "Constructor",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 168,
+											"name": "new ParserUtils",
+											"kind": 16384,
+											"kindString": "Constructor signature",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 140,
+												"name": "ParserUtils"
+											}
+										}
+									]
+								},
+								{
+									"id": 159,
+									"name": "contains",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isStatic": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 388,
+											"character": 8,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L388"
+										}
+									],
+									"signatures": [
+										{
+											"id": 160,
+											"name": "contains",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 161,
+													"name": "str",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 162,
+													"name": "subStr",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									]
+								},
+								{
+									"id": 150,
+									"name": "getInBetween",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isStatic": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 250,
+											"character": 8,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L250"
+										}
+									],
+									"signatures": [
+										{
+											"id": 151,
+											"name": "getInBetween",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 152,
+													"name": "str",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 153,
+													"name": "enclosingPair",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"id": 120,
+														"name": "EnclosingPair"
+													}
+												}
+											],
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "string"
+													},
+													{
+														"type": "array",
+														"elementType": {
+															"type": "intrinsic",
+															"name": "string"
+														}
+													}
+												]
+											}
+										}
+									]
+								},
+								{
+									"id": 154,
+									"name": "isStringAt",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isStatic": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 365,
+											"character": 8,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L365"
+										}
+									],
+									"signatures": [
+										{
+											"id": 155,
+											"name": "isStringAt",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 156,
+													"name": "str",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 157,
+													"name": "subStr",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 158,
+													"name": "index",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									]
+								},
+								{
+									"id": 163,
+									"name": "numberOfOccurrences",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isStatic": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 392,
+											"character": 8,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L392"
+										}
+									],
+									"signatures": [
+										{
+											"id": 164,
+											"name": "numberOfOccurrences",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 165,
+													"name": "str",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 166,
+													"name": "subStr",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									]
+								},
+								{
+									"id": 146,
+									"name": "removeInBetween",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isStatic": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 174,
+											"character": 8,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L174"
+										}
+									],
+									"signatures": [
+										{
+											"id": 147,
+											"name": "removeInBetween",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 148,
+													"name": "str",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 149,
+													"name": "enclosingPair",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"id": 120,
+														"name": "EnclosingPair"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									]
+								},
+								{
+									"id": 141,
+									"name": "split",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isStatic": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+											"line": 57,
+											"character": 8,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L57"
+										}
+									],
+									"signatures": [
+										{
+											"id": 142,
+											"name": "split",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 143,
+													"name": "str",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 144,
+													"name": "separator",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 145,
+													"name": "ignore",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isOptional": true
+													},
+													"type": {
+														"type": "reference",
+														"id": 120,
+														"name": "EnclosingPair"
+													}
+												}
+											],
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Constructors",
+									"children": [
+										167
+									]
+								},
+								{
+									"title": "Methods",
+									"children": [
+										159,
+										150,
+										154,
+										163,
+										146,
+										141
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+									"line": 55,
+									"character": 13,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L55"
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Classes",
+							"children": [
+								120,
+								140
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "libs/OPD-utils-lib/src/ParserUtils.ts",
+							"line": 1,
+							"character": 0,
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/ParserUtils.ts#L1"
+						}
+					]
+				},
+				{
+					"id": 226,
+					"name": "OPDUtils",
+					"kind": 4,
+					"kindString": "Namespace",
+					"flags": {},
+					"children": [
+						{
+							"id": 263,
+							"name": "KeyValuePair",
+							"kind": 256,
+							"kindString": "Interface",
+							"flags": {},
+							"children": [
+								{
+									"id": 264,
+									"name": "key",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+											"line": 138,
+											"character": 1,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L138"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 266,
+										"name": "T"
+									}
+								},
+								{
+									"id": 265,
+									"name": "value",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+											"line": 139,
+											"character": 1,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L139"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 267,
+										"name": "U"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										264,
+										265
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+									"line": 137,
+									"character": 17,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L137"
+								}
+							],
+							"typeParameters": [
+								{
+									"id": 266,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {}
+								},
+								{
+									"id": 267,
+									"name": "U",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {}
+								}
+							]
+						},
+						{
+							"id": 245,
+							"name": "arrayEquals",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+									"line": 78,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L78"
+								}
+							],
+							"signatures": [
+								{
+									"id": 246,
+									"name": "arrayEquals",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Checks if 2 arrays are equal, the arrays should have the same datatype"
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "true if the two arrays are equal"
+													}
+												]
+											}
+										]
+									},
+									"typeParameter": [
+										{
+											"id": 247,
+											"name": "T",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {}
+										}
+									],
+									"parameters": [
+										{
+											"id": 248,
+											"name": "arr1",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 247,
+													"name": "T"
+												}
+											}
+										},
+										{
+											"id": 249,
+											"name": "arr2",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 247,
+													"name": "T"
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							]
+						},
+						{
+							"id": 236,
+							"name": "clamp",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+									"line": 54,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L54"
+								}
+							],
+							"signatures": [
+								{
+									"id": 237,
+									"name": "clamp",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Clamp a number between a min and a max."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "code",
+														"text": "`min`"
+													},
+													{
+														"kind": "text",
+														"text": " if "
+													},
+													{
+														"kind": "code",
+														"text": "`num < min`"
+													},
+													{
+														"kind": "text",
+														"text": ", "
+													},
+													{
+														"kind": "code",
+														"text": "`max`"
+													},
+													{
+														"kind": "text",
+														"text": " if "
+													},
+													{
+														"kind": "code",
+														"text": "`num > max`"
+													},
+													{
+														"kind": "text",
+														"text": ", "
+													},
+													{
+														"kind": "code",
+														"text": "`num`"
+													},
+													{
+														"kind": "text",
+														"text": " else"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 238,
+											"name": "num",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the number to clamp"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 239,
+											"name": "min",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the minimum value"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 240,
+											"name": "max",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the maximum value"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							]
+						},
+						{
+							"id": 256,
+							"name": "equalOrIncludes",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+									"line": 122,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L122"
+								}
+							],
+							"signatures": [
+								{
+									"id": 257,
+									"name": "equalOrIncludes",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Checks if two strings are equal or one includes the other."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "true if "
+													},
+													{
+														"kind": "code",
+														"text": "`str1`"
+													},
+													{
+														"kind": "text",
+														"text": " and "
+													},
+													{
+														"kind": "code",
+														"text": "`str2`"
+													},
+													{
+														"kind": "text",
+														"text": " are equal or one includes the other"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 258,
+											"name": "str1",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 259,
+											"name": "str2",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							]
+						},
+						{
+							"id": 227,
+							"name": "getFileName",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+									"line": 9,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L9"
+								}
+							],
+							"signatures": [
+								{
+									"id": 228,
+									"name": "getFileName",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Gets the file name from a path.\nThe Path must be separated by "
+											},
+											{
+												"kind": "code",
+												"text": "`/`"
+											},
+											{
+												"kind": "text",
+												"text": "."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "the file name including the file extension if it was present"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 229,
+											"name": "path",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the path, must be seperated by "
+													},
+													{
+														"kind": "code",
+														"text": "`/`"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							]
+						},
+						{
+							"id": 253,
+							"name": "isFalsy",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+									"line": 110,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L110"
+								}
+							],
+							"signatures": [
+								{
+									"id": 254,
+									"name": "isFalsy",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Checks if a value is falsy."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "true if the value is falsy"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 255,
+											"name": "value",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							]
+						},
+						{
+							"id": 230,
+							"name": "isPath",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+									"line": 21,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L21"
+								}
+							],
+							"signatures": [
+								{
+									"id": 231,
+									"name": "isPath",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Checks if a path is a path or a file name.\nThe Path must be separated by "
+											},
+											{
+												"kind": "code",
+												"text": "`/`"
+											},
+											{
+												"kind": "text",
+												"text": "."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "code",
+														"text": "`true`"
+													},
+													{
+														"kind": "text",
+														"text": " if the path is a path, "
+													},
+													{
+														"kind": "code",
+														"text": "`false`"
+													},
+													{
+														"kind": "text",
+														"text": " if it is a file name"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 232,
+											"name": "path",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the path, must be seperated by "
+													},
+													{
+														"kind": "code",
+														"text": "`/`"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							]
+						},
+						{
+							"id": 250,
+							"name": "isTruthy",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+									"line": 99,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L99"
+								}
+							],
+							"signatures": [
+								{
+									"id": 251,
+									"name": "isTruthy",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Checks if a value is truthy."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "true if the value is truthy"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 252,
+											"name": "value",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							]
+						},
+						{
+							"id": 241,
+							"name": "mod",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+									"line": 66,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L66"
+								}
+							],
+							"signatures": [
+								{
+									"id": 242,
+									"name": "mod",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Mathematically correct modulo."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "code",
+														"text": "`n % m`"
+													},
+													{
+														"kind": "text",
+														"text": " always in the range "
+													},
+													{
+														"kind": "code",
+														"text": "`0..m-1`"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 243,
+											"name": "n",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 244,
+											"name": "m",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							]
+						},
+						{
+							"id": 260,
+							"name": "numberToString",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+									"line": 133,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L133"
+								}
+							],
+							"signatures": [
+								{
+									"id": 261,
+									"name": "numberToString",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Converts a number to a string."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "code",
+														"text": "`n`"
+													},
+													{
+														"kind": "text",
+														"text": " as a string"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 262,
+											"name": "n",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "string"
+													},
+													{
+														"type": "intrinsic",
+														"name": "number"
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							]
+						},
+						{
+							"id": 233,
+							"name": "removeFileExtension",
+							"kind": 64,
+							"kindString": "Function",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+									"line": 32,
+									"character": 16,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L32"
+								}
+							],
+							"signatures": [
+								{
+									"id": 234,
+									"name": "removeFileExtension",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Removes the file extension of a file name."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "the file name without the file extension"
+													}
+												]
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 235,
+											"name": "fileName",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "the file name"
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Interfaces",
+							"children": [
+								263
+							]
+						},
+						{
+							"title": "Functions",
+							"children": [
+								245,
+								236,
+								256,
+								227,
+								253,
+								230,
+								250,
+								241,
+								260,
+								233
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "libs/OPD-utils-lib/src/Utils.ts",
+							"line": 9,
+							"character": 0,
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Utils.ts#L9"
+						}
+					]
+				},
+				{
+					"id": 191,
+					"name": "OPDUtilsErrors",
+					"kind": 4,
+					"kindString": "Namespace",
+					"flags": {},
+					"children": [
+						{
+							"id": 209,
+							"name": "OPDUtilsObjectTraversalError",
+							"kind": 128,
+							"kindString": "Class",
+							"flags": {},
+							"children": [
+								{
+									"id": 220,
+									"name": "constructor",
+									"kind": 512,
+									"kindString": "Constructor",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/Errors.ts",
+											"line": 8,
+											"character": 1,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Errors.ts#L8"
+										}
+									],
+									"signatures": [
+										{
+											"id": 221,
+											"name": "new OPDUtilsObjectTraversalError",
+											"kind": 16384,
+											"kindString": "Constructor signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 222,
+													"name": "message",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"id": 209,
+												"name": "OPDUtilsObjectTraversalError"
+											},
+											"overwrites": {
+												"type": "reference",
+												"name": "Error.constructor"
+											}
+										}
+									],
+									"overwrites": {
+										"type": "reference",
+										"name": "Error.constructor"
+									}
+								},
+								{
+									"id": 224,
+									"name": "message",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExternal": true
+									},
+									"sources": [
+										{
+											"fileName": "docs-generator/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+											"line": 1041,
+											"character": 4
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Error.message"
+									}
+								},
+								{
+									"id": 223,
+									"name": "name",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExternal": true
+									},
+									"sources": [
+										{
+											"fileName": "docs-generator/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+											"line": 1040,
+											"character": 4
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Error.name"
+									}
+								},
+								{
+									"id": 225,
+									"name": "stack",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExternal": true,
+										"isOptional": true
+									},
+									"sources": [
+										{
+											"fileName": "docs-generator/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+											"line": 1042,
+											"character": 4
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Error.stack"
+									}
+								},
+								{
+									"id": 214,
+									"name": "prepareStackTrace",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isStatic": true,
+										"isExternal": true,
+										"isOptional": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/node_modules/@types/node/ts4.8/globals.d.ts",
+											"line": 11,
+											"character": 4
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 215,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "libs/OPD-utils-lib/node_modules/@types/node/ts4.8/globals.d.ts",
+													"line": 11,
+													"character": 25
+												}
+											],
+											"signatures": [
+												{
+													"id": 216,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "Optional override for formatting stack traces"
+															}
+														],
+														"blockTags": [
+															{
+																"tag": "@see",
+																"content": [
+																	{
+																		"kind": "text",
+																		"text": "https://v8.dev/docs/stack-trace-api#customizing-stack-traces"
+																	}
+																]
+															}
+														]
+													},
+													"parameters": [
+														{
+															"id": 217,
+															"name": "err",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "Error",
+																"qualifiedName": "Error",
+																"package": "typescript"
+															}
+														},
+														{
+															"id": 218,
+															"name": "stackTraces",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "array",
+																"elementType": {
+																	"type": "reference",
+																	"name": "CallSite",
+																	"qualifiedName": "NodeJS.CallSite",
+																	"package": "@types/node"
+																}
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											]
+										}
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Error.prepareStackTrace"
+									}
+								},
+								{
+									"id": 219,
+									"name": "stackTraceLimit",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isStatic": true,
+										"isExternal": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/node_modules/@types/node/ts4.8/globals.d.ts",
+											"line": 13,
+											"character": 4
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Error.stackTraceLimit"
+									}
+								},
+								{
+									"id": 210,
+									"name": "captureStackTrace",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isStatic": true,
+										"isExternal": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/node_modules/@types/node/ts4.8/globals.d.ts",
+											"line": 4,
+											"character": 4
+										}
+									],
+									"signatures": [
+										{
+											"id": 211,
+											"name": "captureStackTrace",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExternal": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Create .stack property on a target object"
+													}
+												]
+											},
+											"parameters": [
+												{
+													"id": 212,
+													"name": "targetObject",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExternal": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "object"
+													}
+												},
+												{
+													"id": 213,
+													"name": "constructorOpt",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExternal": true,
+														"isOptional": true
+													},
+													"type": {
+														"type": "reference",
+														"name": "Function",
+														"qualifiedName": "Function",
+														"package": "typescript"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											},
+											"inheritedFrom": {
+												"type": "reference",
+												"name": "Error.captureStackTrace"
+											}
+										}
+									],
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Error.captureStackTrace"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Constructors",
+									"children": [
+										220
+									]
+								},
+								{
+									"title": "Properties",
+									"children": [
+										224,
+										223,
+										225,
+										214,
+										219
+									]
+								},
+								{
+									"title": "Methods",
+									"children": [
+										210
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Errors.ts",
+									"line": 7,
+									"character": 13,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Errors.ts#L7"
+								}
+							],
+							"extendedTypes": [
+								{
+									"type": "reference",
+									"name": "Error",
+									"qualifiedName": "Error",
+									"package": "typescript"
+								}
+							]
+						},
+						{
+							"id": 192,
+							"name": "OPDUtilsParsingError",
+							"kind": 128,
+							"kindString": "Class",
+							"flags": {},
+							"children": [
+								{
+									"id": 203,
+									"name": "constructor",
+									"kind": 512,
+									"kindString": "Constructor",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/src/Errors.ts",
+											"line": 2,
+											"character": 1,
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Errors.ts#L2"
+										}
+									],
+									"signatures": [
+										{
+											"id": 204,
+											"name": "new OPDUtilsParsingError",
+											"kind": 16384,
+											"kindString": "Constructor signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 205,
+													"name": "message",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"id": 192,
+												"name": "OPDUtilsParsingError"
+											},
+											"overwrites": {
+												"type": "reference",
+												"name": "Error.constructor"
+											}
+										}
+									],
+									"overwrites": {
+										"type": "reference",
+										"name": "Error.constructor"
+									}
+								},
+								{
+									"id": 207,
+									"name": "message",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExternal": true
+									},
+									"sources": [
+										{
+											"fileName": "docs-generator/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+											"line": 1041,
+											"character": 4
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Error.message"
+									}
+								},
+								{
+									"id": 206,
+									"name": "name",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExternal": true
+									},
+									"sources": [
+										{
+											"fileName": "docs-generator/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+											"line": 1040,
+											"character": 4
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Error.name"
+									}
+								},
+								{
+									"id": 208,
+									"name": "stack",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isExternal": true,
+										"isOptional": true
+									},
+									"sources": [
+										{
+											"fileName": "docs-generator/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+											"line": 1042,
+											"character": 4
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Error.stack"
+									}
+								},
+								{
+									"id": 197,
+									"name": "prepareStackTrace",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isStatic": true,
+										"isExternal": true,
+										"isOptional": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/node_modules/@types/node/ts4.8/globals.d.ts",
+											"line": 11,
+											"character": 4
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 198,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "libs/OPD-utils-lib/node_modules/@types/node/ts4.8/globals.d.ts",
+													"line": 11,
+													"character": 25
+												}
+											],
+											"signatures": [
+												{
+													"id": 199,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "Optional override for formatting stack traces"
+															}
+														],
+														"blockTags": [
+															{
+																"tag": "@see",
+																"content": [
+																	{
+																		"kind": "text",
+																		"text": "https://v8.dev/docs/stack-trace-api#customizing-stack-traces"
+																	}
+																]
+															}
+														]
+													},
+													"parameters": [
+														{
+															"id": 200,
+															"name": "err",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "reference",
+																"name": "Error",
+																"qualifiedName": "Error",
+																"package": "typescript"
+															}
+														},
+														{
+															"id": 201,
+															"name": "stackTraces",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "array",
+																"elementType": {
+																	"type": "reference",
+																	"name": "CallSite",
+																	"qualifiedName": "NodeJS.CallSite",
+																	"package": "@types/node"
+																}
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											]
+										}
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Error.prepareStackTrace"
+									}
+								},
+								{
+									"id": 202,
+									"name": "stackTraceLimit",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isStatic": true,
+										"isExternal": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/node_modules/@types/node/ts4.8/globals.d.ts",
+											"line": 13,
+											"character": 4
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Error.stackTraceLimit"
+									}
+								},
+								{
+									"id": 193,
+									"name": "captureStackTrace",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {
+										"isStatic": true,
+										"isExternal": true
+									},
+									"sources": [
+										{
+											"fileName": "libs/OPD-utils-lib/node_modules/@types/node/ts4.8/globals.d.ts",
+											"line": 4,
+											"character": 4
+										}
+									],
+									"signatures": [
+										{
+											"id": 194,
+											"name": "captureStackTrace",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExternal": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Create .stack property on a target object"
+													}
+												]
+											},
+											"parameters": [
+												{
+													"id": 195,
+													"name": "targetObject",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExternal": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "object"
+													}
+												},
+												{
+													"id": 196,
+													"name": "constructorOpt",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExternal": true,
+														"isOptional": true
+													},
+													"type": {
+														"type": "reference",
+														"name": "Function",
+														"qualifiedName": "Function",
+														"package": "typescript"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											},
+											"inheritedFrom": {
+												"type": "reference",
+												"name": "Error.captureStackTrace"
+											}
+										}
+									],
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Error.captureStackTrace"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Constructors",
+									"children": [
+										203
+									]
+								},
+								{
+									"title": "Properties",
+									"children": [
+										207,
+										206,
+										208,
+										197,
+										202
+									]
+								},
+								{
+									"title": "Methods",
+									"children": [
+										193
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "libs/OPD-utils-lib/src/Errors.ts",
+									"line": 1,
+									"character": 13,
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Errors.ts#L1"
+								}
+							],
+							"extendedTypes": [
+								{
+									"type": "reference",
+									"name": "Error",
+									"qualifiedName": "Error",
+									"package": "typescript"
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Classes",
+							"children": [
+								209,
+								192
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "libs/OPD-utils-lib/src/Errors.ts",
+							"line": 1,
+							"character": 0,
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/Errors.ts#L1"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Namespaces",
+					"children": [
+						169,
+						119,
+						226,
+						191
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "libs/OPD-utils-lib/src/API.ts",
+					"line": 1,
+					"character": 0,
+					"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-utils-lib/src/API.ts#L1"
 				}
 			]
 		},
@@ -1394,10 +4617,10 @@
 											"flags": {},
 											"sources": [
 												{
-													"fileName": "OPD-settings-lib/src/index.ts",
+													"fileName": "libs/OPD-settings-lib/src/index.ts",
 													"line": 32,
 													"character": 12,
-													"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L32"
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L32"
 												}
 											],
 											"signatures": [
@@ -1458,10 +4681,10 @@
 											"flags": {},
 											"sources": [
 												{
-													"fileName": "OPD-settings-lib/src/index.ts",
+													"fileName": "libs/OPD-settings-lib/src/index.ts",
 													"line": 28,
 													"character": 12,
-													"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L28"
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L28"
 												}
 											],
 											"type": {
@@ -1477,10 +4700,10 @@
 											"flags": {},
 											"sources": [
 												{
-													"fileName": "OPD-settings-lib/src/index.ts",
+													"fileName": "libs/OPD-settings-lib/src/index.ts",
 													"line": 29,
 													"character": 12,
-													"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L29"
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L29"
 												}
 											],
 											"type": {
@@ -1496,10 +4719,10 @@
 											"flags": {},
 											"sources": [
 												{
-													"fileName": "OPD-settings-lib/src/index.ts",
+													"fileName": "libs/OPD-settings-lib/src/index.ts",
 													"line": 30,
 													"character": 12,
-													"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L30"
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L30"
 												}
 											],
 											"type": {
@@ -1515,10 +4738,10 @@
 											"flags": {},
 											"sources": [
 												{
-													"fileName": "OPD-settings-lib/src/index.ts",
+													"fileName": "libs/OPD-settings-lib/src/index.ts",
 													"line": 38,
 													"character": 12,
-													"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L38"
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L38"
 												}
 											],
 											"signatures": [
@@ -1557,10 +4780,10 @@
 											"flags": {},
 											"sources": [
 												{
-													"fileName": "OPD-settings-lib/src/index.ts",
+													"fileName": "libs/OPD-settings-lib/src/index.ts",
 													"line": 60,
 													"character": 12,
-													"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L60"
+													"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L60"
 												}
 											],
 											"signatures": [
@@ -1617,10 +4840,10 @@
 									],
 									"sources": [
 										{
-											"fileName": "OPD-settings-lib/src/index.ts",
+											"fileName": "libs/OPD-settings-lib/src/index.ts",
 											"line": 27,
 											"character": 21,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L27"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L27"
 										}
 									]
 								},
@@ -1632,10 +4855,10 @@
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "OPD-settings-lib/src/index.ts",
+											"fileName": "libs/OPD-settings-lib/src/index.ts",
 											"line": 65,
 											"character": 24,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L65"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L65"
 										}
 									],
 									"signatures": [
@@ -1696,10 +4919,10 @@
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "OPD-settings-lib/src/index.ts",
+											"fileName": "libs/OPD-settings-lib/src/index.ts",
 											"line": 69,
 											"character": 24,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L69"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L69"
 										}
 									],
 									"signatures": [
@@ -1748,10 +4971,10 @@
 							],
 							"sources": [
 								{
-									"fileName": "OPD-settings-lib/src/index.ts",
+									"fileName": "libs/OPD-settings-lib/src/index.ts",
 									"line": 26,
 									"character": 21,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L26"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L26"
 								}
 							]
 						},
@@ -1770,10 +4993,10 @@
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "OPD-settings-lib/src/index.ts",
+											"fileName": "libs/OPD-settings-lib/src/index.ts",
 											"line": 19,
 											"character": 8,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L19"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L19"
 										}
 									],
 									"signatures": [
@@ -1866,10 +5089,10 @@
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "OPD-settings-lib/src/index.ts",
+											"fileName": "libs/OPD-settings-lib/src/index.ts",
 											"line": 16,
 											"character": 8,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L16"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L16"
 										}
 									],
 									"type": {
@@ -1888,10 +5111,10 @@
 									},
 									"sources": [
 										{
-											"fileName": "OPD-settings-lib/src/index.ts",
+											"fileName": "libs/OPD-settings-lib/src/index.ts",
 											"line": 17,
 											"character": 8,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L17"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L17"
 										}
 									],
 									"type": {
@@ -1915,10 +5138,10 @@
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "OPD-settings-lib/src/index.ts",
+											"fileName": "libs/OPD-settings-lib/src/index.ts",
 											"line": 15,
 											"character": 8,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L15"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L15"
 										}
 									],
 									"type": {
@@ -1946,10 +5169,10 @@
 							],
 							"sources": [
 								{
-									"fileName": "OPD-settings-lib/src/index.ts",
+									"fileName": "libs/OPD-settings-lib/src/index.ts",
 									"line": 14,
 									"character": 17,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L14"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L14"
 								}
 							],
 							"typeParameters": [
@@ -1981,10 +5204,10 @@
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "OPD-settings-lib/src/index.ts",
+											"fileName": "libs/OPD-settings-lib/src/index.ts",
 											"line": 11,
 											"character": 8,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L11"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L11"
 										}
 									],
 									"type": {
@@ -2001,10 +5224,10 @@
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "OPD-settings-lib/src/index.ts",
+											"fileName": "libs/OPD-settings-lib/src/index.ts",
 											"line": 10,
 											"character": 8,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L10"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L10"
 										}
 									],
 									"type": {
@@ -2025,10 +5248,10 @@
 							],
 							"sources": [
 								{
-									"fileName": "OPD-settings-lib/src/index.ts",
+									"fileName": "libs/OPD-settings-lib/src/index.ts",
 									"line": 9,
 									"character": 21,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L9"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L9"
 								}
 							],
 							"typeParameters": [
@@ -2053,10 +5276,10 @@
 							"flags": {},
 							"sources": [
 								{
-									"fileName": "OPD-settings-lib/src/index.ts",
+									"fileName": "libs/OPD-settings-lib/src/index.ts",
 									"line": 6,
 									"character": 16,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L6"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L6"
 								}
 							],
 							"typeParameters": [
@@ -2078,10 +5301,10 @@
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "OPD-settings-lib/src/index.ts",
+											"fileName": "libs/OPD-settings-lib/src/index.ts",
 											"line": 6,
 											"character": 45,
-											"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L6"
+											"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L6"
 										}
 									],
 									"signatures": [
@@ -2134,10 +5357,10 @@
 							"flags": {},
 							"sources": [
 								{
-									"fileName": "OPD-settings-lib/src/index.ts",
+									"fileName": "libs/OPD-settings-lib/src/index.ts",
 									"line": 7,
 									"character": 16,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L7"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L7"
 								}
 							],
 							"type": {
@@ -2163,10 +5386,10 @@
 							"flags": {},
 							"sources": [
 								{
-									"fileName": "OPD-settings-lib/src/index.ts",
+									"fileName": "libs/OPD-settings-lib/src/index.ts",
 									"line": 119,
 									"character": 20,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L119"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L119"
 								}
 							],
 							"signatures": [
@@ -2249,10 +5472,10 @@
 							"flags": {},
 							"sources": [
 								{
-									"fileName": "OPD-settings-lib/src/index.ts",
+									"fileName": "libs/OPD-settings-lib/src/index.ts",
 									"line": 109,
 									"character": 20,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L109"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L109"
 								}
 							],
 							"signatures": [
@@ -2316,10 +5539,10 @@
 							"flags": {},
 							"sources": [
 								{
-									"fileName": "OPD-settings-lib/src/index.ts",
+									"fileName": "libs/OPD-settings-lib/src/index.ts",
 									"line": 97,
 									"character": 20,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L97"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L97"
 								}
 							],
 							"signatures": [
@@ -2404,10 +5627,10 @@
 							"flags": {},
 							"sources": [
 								{
-									"fileName": "OPD-settings-lib/src/index.ts",
+									"fileName": "libs/OPD-settings-lib/src/index.ts",
 									"line": 123,
 									"character": 20,
-									"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L123"
+									"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L123"
 								}
 							],
 							"signatures": [
@@ -2502,10 +5725,10 @@
 					],
 					"sources": [
 						{
-							"fileName": "OPD-settings-lib/src/index.ts",
+							"fileName": "libs/OPD-settings-lib/src/index.ts",
 							"line": 4,
 							"character": 17,
-							"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L4"
+							"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L4"
 						}
 					]
 				}
@@ -2520,10 +5743,10 @@
 			],
 			"sources": [
 				{
-					"fileName": "OPD-settings-lib/src/index.ts",
+					"fileName": "libs/OPD-settings-lib/src/index.ts",
 					"line": 4,
 					"character": 0,
-					"url": "https://github.com/OPD-libs/OPD-libs/blob/60261b0/libs/OPD-settings-lib/src/index.ts#L4"
+					"url": "https://github.com/OPD-libs/OPD-libs/blob/4e8d07b/libs/OPD-settings-lib/src/index.ts#L4"
 				}
 			]
 		}
@@ -2533,6 +5756,7 @@
 			"title": "Modules",
 			"children": [
 				69,
+				118,
 				1
 			]
 		}
