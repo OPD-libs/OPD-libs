@@ -16,7 +16,7 @@
 	},
 	"homepage": "https://opd-libs.github.io/OPD-libs/index.html",
 	"dependencies": {
-		"@opd-libs/opd-utils-lib": "^0.0.1",
+		"@opd-libs/opd-utils-lib": "0.0.2",
 		"obsidian": "latest"
 	},
 	"devDependencies": {
