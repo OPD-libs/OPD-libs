@@ -4,7 +4,7 @@
  *
  * @param path the path, must be seperated by `/`
  *
- * @returns the file name including the file extension if it was present
+ * @returns the file name including the file extension if it was prsesent
  */
 export function getFileName(path: string): string {
 	return path.split('/').at(-1) ?? path;
