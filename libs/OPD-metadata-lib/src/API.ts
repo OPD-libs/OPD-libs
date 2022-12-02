@@ -154,16 +154,3 @@ export function getFrontmatterOfTFile(file: TFile, plugin: Plugin_2): object {
 export async function setFrontmatterOfTFile(metadata: object, file: TFile, plugin: Plugin_2): Promise<void> {
 	await Internal.updateFrontmatter(metadata, file, plugin);
 }
-
-/**
- * UNUSED
- * @deprecated
- *
- * @param plugin
- * @param file
- * @param frontmatterAsYaml
- */
-async function generateFileContents(plugin: Plugin_2, file: TFile, frontmatterAsYaml: string) {
-	const fileContents = await plugin.app.vault.cachedRead(file);
-	return fileContents.replace(/^---\n(.*\n)*---/, frontmatterAsYaml);
-}
