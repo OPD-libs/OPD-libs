@@ -19,15 +19,15 @@ export namespace Internal {
 	 *
 	 * @returns the frontmatter as a property array
 	 */
-	export function getMetaDataFromFileContent(fileContent: string): object {
+	export function getMetaDataFromFileContent(fileContent: string): object | undefined {
 		const regExp = new RegExp(frontMatterRexExpPattern);
 		const frontMatterRegExpResult = regExp.exec(fileContent);
 		if (!frontMatterRegExpResult) {
-			return [];
+			return {};
 		}
 		let frontMatter = frontMatterRegExpResult[0];
 		if (!frontMatter) {
-			return [];
+			return {};
 		}
 		frontMatter = frontMatter.substring(4);
 		frontMatter = frontMatter.substring(0, frontMatter.length - 3);
@@ -42,7 +42,7 @@ export namespace Internal {
 	 *
 	 * @returns the parsed yaml as an object
 	 */
-	export function getMetaDataFromYAML(yaml: string): object {
+	export function getMetaDataFromYAML(yaml: string): object | undefined {
 		if (!yaml) {
 			return {};
 		}
@@ -95,7 +95,13 @@ export namespace Internal {
 	export async function updateFrontmatter(metadata: object, file: TFile, plugin: Plugin_2) {
 		let fileContent: string = await plugin.app.vault.cachedRead(file);
 		fileContent = removeFrontmatter(fileContent);
-		fileContent = `${stringifyFrontmatter(metadata)}${fileContent}`;
+		if (fileContent.startsWith('\n\n')) {
+			fileContent = `${stringifyFrontmatter(metadata)}${fileContent}`;
+		} else if (fileContent.startsWith('\n\n')) {
+			fileContent = `${stringifyFrontmatter(metadata)}\n${fileContent}`;
+		} else {
+			fileContent = `${stringifyFrontmatter(metadata)}\n\n${fileContent}`;
+		}
 
 		await plugin.app.vault.modify(file, fileContent);
 	}
