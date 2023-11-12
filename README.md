@@ -1,5 +1,7 @@
 # OPD-libs
 
+# THIS REPO IS UNMAINTAINED - Most of the stuff that this repo does can be done better with the Obsidian API or other dependencies 
+
 A collection of libraries for Obsidian plugin devs.
 
 ## Documentation
